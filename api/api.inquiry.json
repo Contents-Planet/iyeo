@@ -1,0 +1,10 @@
+{
+    "result" : "ok",
+    "data" : [
+      {"name" : "전*진", "title": "창업 문의드립니다.", "reg_date": "2023-12-03", "reple_yn": "N"},
+      {"name" : "올*", "title": "문의 드립니다.", "reg_date": "2023-11-24", "reple_yn": "Y"},
+      {"name" : "김*태", "title": "의정부점 문의드립니다.", "reg_date": "2023-11-19", "reple_yn": "Y"},
+      {"name" : "박*영", "title": "문의합니다.", "reg_date": "2023-11-14", "reple_yn": "Y"},
+      {"name" : "경*정", "title": "창업문의합니다", "reg_date": "2023-10-28", "reple_yn": "Y"}
+    ]
+  }
