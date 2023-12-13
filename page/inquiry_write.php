@@ -58,30 +58,40 @@
                                             <tbody>
                                                 <tr>
                                                     <th>성명</th>
-                                                    <td><input type='text' style='border:0; border-bottom:1px solid #eee;' name='name'></td>
+                                                    <td><input type='text' style='border:0; border-bottom:1px solid #eee;' name='name'  placeholder="성명을 입력해주세요."></td>
                                                 </tr>
                                                 <tr>
                                                     <th>연락처</th>
-                                                    <td><input type='text' style='border:0; border-bottom:1px solid #eee;' name='phone'></td>
+                                                    <td><input type='text' style='border:0; border-bottom:1px solid #eee;' name='phone'  placeholder="연락처를 입력해주세요."></td>
                                                 </tr>
                                                 <?php if($type == 'startups'){?>
-                                                <tr>
-                                                    <th>희망지역</th>
-                                                    <td><input type='text' style='border:0; border-bottom:1px solid #eee;' name='area'></td>
-                                                </tr>
-                                                <?php } ?>
                                                     <tr>
-                                                        <th>문의 제목</th>
-                                                        <td><input type='text' style='border:0; border-bottom:1px solid #eee;' name='title'></td>
+                                                        <th rowspan="2">희망지역</th>
+                                                        <td>
+                                                            <input type='text' style='width:48%;border:0; border-bottom:1px solid #eee;' placeholder="시/도" name='area'>
+                                                            <input type='text' style='width:48%;border:0; border-bottom:1px solid #eee;' placeholder="시/구/군" name='area2'>
+                                                        </td>
                                                     </tr>
                                                     <tr>
+                                                        <td>
+                                                            <input type='text' style='width:98%; border:0; border-bottom:1px solid #eee;'  placeholder="상세주소" name='area3'>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                                <?php if($type == 'customer'){?>
+                                                    <tr>
+                                                        <th>문의 제목</th>
+                                                        <td><input type='text' style='border:0; border-bottom:1px solid #eee;'  placeholder="문의제목을 입력해주세요."name='title'></td>
+                                                    </tr>
+                                                <?php } ?>
+                                                    <tr>
                                                         <th>문의 내용</th>
-                                                        <td><textarea style='width:100%; height:240px; border:0; border-bottom:1px solid #eee;' name='content'></textarea></td>
+                                                        <td><textarea style='width:100%; height:240px; border:0; border-bottom:1px solid #eee;'  placeholder="문의내용을 입력해주세요." name='content'></textarea></td>
                                                     </tr>
                                                 <?php if($type == 'customer'){?>
                                                     <tr>
                                                         <th>문의 비밀번호</th>
-                                                        <td><input type='password' style='width:100%;border:0; border-bottom:1px solid #eee;' name='pw'></td>
+                                                        <td><input type='password' style='width:100%;border:0; border-bottom:1px solid #eee;' placeholder="1:1문의 비밀번호를 입력해주세요." name='pw'></td>
                                                     </tr>
                                                 <?php } ?>
                                                 <tr>

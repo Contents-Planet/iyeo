@@ -20,6 +20,8 @@ switch ($mode) {
           "name" => $_POST['name'],
           "phone" => $_POST['phone'],
           "area" => $_POST['area'],
+          "area2" => $_POST['area2'],
+          "area3" => $_POST['area3'],
           "content" => $_POST['content'],
           "created_at" => date('Y-m-d H:i:s')
         ],
