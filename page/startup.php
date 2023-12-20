@@ -23,6 +23,15 @@
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>
         <li><span class="nav-item"><span class="txt">창업 안내</span></span></li>
+        <li>
+          <div class="drop-box" data-selector="dropContainer" data-sid="moveLink">
+            <a href="javascript:void(0)" class="nav-item ico" data-action="drop">창업 안내</a>
+            <div class="drop-wrap">
+              <a href="javascript:void(0)" class="nav-item _active" data-action="value" data-url="/page/startup">창업 안내</a>
+              <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="/page/inquiry_write?type=startups">창업 문의</a>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </section>

@@ -304,7 +304,7 @@ figure {text-align: center}
 .file-label._addFile .btn {display:none;}
 .file-label + .btn {vertical-align: top;display:none;}
 .file-label._addFile + .btn {display:inline-block}
-.req:after {content:"*"; display:inline-block; margin-left:5px; color:#ff009c}
+.req:after {content:"*"; display:inline-block; margin-left:5px; color:#ff0000}
 .btn .req:after {color:#fff}
 .blit {font-weight:700; line-height:1.2; display:block; position:relative; padding-top:25px;}
 .blit:before {content:""; display:block; width:42px; height:12px; background:url(../../img/logo_blit.png) center no-repeat; background-size:cover; position:absolute; left:0; top:0;}

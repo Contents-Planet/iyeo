@@ -38,11 +38,12 @@ switch ($mode) {
       };
       $iyeoService->inquiryCreate($inputData);
 
-      echo ("<script> alert('문의를 등록했습니다.'); location.href='/page/inquiry'; </script>");
+      echo ("<script> alert('문의를 등록했습니다.'); location.href='/page/inquiry_success.php?type=". $type ."'; </script>");
     } catch (Exception $e) {
       // echo $e->getMessage();
       exit;
     }
+    break;
   case "getList":
     try {
       $iyeoService = new IyeoService();
@@ -52,8 +53,10 @@ switch ($mode) {
       $cnt = 0;
 
       foreach ($datas as $data) {
+        $results["datas"][$cnt]["seqs"] = $data['seq'];
         $results["datas"][$cnt]["name"]  = preg_replace('/.(?=.$)/u', '*', $data['name']);
         $results["datas"][$cnt]["title"] = $data['title'];
+        $results["datas"][$cnt]["content"] = $data['content'];
         $results["datas"][$cnt]["reg_date"] = date("Y-m-d", strtotime($data['created_at']));
         $results["datas"][$cnt]["reple_yn"] = $data['is_check'];
         $cnt++;
@@ -67,10 +70,7 @@ switch ($mode) {
         "result" => 400,
         "message" => $e->getMessage()
       ]);
+      break;
     }
-    exit;
-    break;
-
-    break;
 };
 exit;

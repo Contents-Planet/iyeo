@@ -187,8 +187,9 @@ ND.FN = {
 
 					var url = $(this).data("url")
 					if(url){
-						console.log(url, "ddd")
 						location.href = url;
+					} else {
+						alert("준비중 입니다.")
 					}
 
 					var value = $(this).html();
@@ -720,14 +721,14 @@ function searchZipcode() {
 
 ND.Form = {
 	Validate : function(form){
-		$(form).find("input, select").removeClass("_input");
-		$(form).find("input, select").addClass("_input");
+		$(form).find("input, select, textarea").removeClass("_input");
+		$(form).find("input, select, textarea").addClass("_input");
 		var $input = $(form).find("._input"),
 			exit = "false";
 
 		$.each($input, function(index,row){
 			if ($(row).attr('data-validate') === "req") {
-				if($(row).attr("type") === "text" && !$(row).val()) {
+				if(!$(row).val()) {
 					var placeholder = $(row).attr('placeholder');
 					alert(placeholder);
 					$(row).focus();

@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../_asset/_css/common.css" type="text/css" />
-<link rel="stylesheet" href="../_asset/_css/style.css" type="text/css" />
+<link rel="stylesheet" href="../_asset/_css/style.min.css" type="text/css" />
 
 <script src="//static.econtents.co.kr/_asset/_lib/jquery-3.2.1.min.js"></script>
 <script src="//static.econtents.co.kr/_asset/_lib/cssua.min.js"></script >
