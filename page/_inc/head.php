@@ -33,7 +33,7 @@
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 <script type="text/javascript">
   if(!wcs_add) var wcs_add = {};
-  wcs_add["wa"] = "1edc91d40a01cd0";
+  wcs_add["wa"] = "1f44fb1478f34a0";
   if(window.wcs) {
     wcs_do();
   }
