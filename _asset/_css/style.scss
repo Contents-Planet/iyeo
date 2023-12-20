@@ -1986,6 +1986,17 @@ section {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .inquiry-container {
+    .inner-dl {
+      & > dt,
+      & > dd {
+        width:100%;
+      }
+    }
+  }
+}
+
 /* page-mall */
 .page-mall #contents {
   padding: 0;
