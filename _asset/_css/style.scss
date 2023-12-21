@@ -515,6 +515,17 @@ body {
   text-align: center;
 }
 
+.btn-right {
+  display:flex;
+  justify-content: flex-end;
+  margin-top:25px;
+
+  .btn {
+    width:100px;
+    max-width:150px;
+  }
+}
+
 section {
   position: relative;
   margin: 0 auto;
@@ -1986,6 +1997,73 @@ section {
   }
 }
 
+.paging-container {
+  display:block;
+  width:100%;
+  text-align: center;
+
+  .paging {
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    & > li {
+      padding:0 3px;
+    }
+
+    .page {
+      display: block;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #322b29;
+      position: relative;
+      text-align: center;
+      line-height: 38px;
+      color: #322b29;
+
+      &._active {
+        color: #fff;
+        background-color:#322b29
+      }
+
+      &.page-first,
+      &.page-prev,
+      &.page-next,
+      &.page-last {
+        border-color: #e3e3e3
+      }
+
+      &.page-first:before,
+      &.page-prev:before,
+      &.page-next:before,
+      &.page-last:before {
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+      }
+
+      &.page-first:before,
+      &.page-last:before {
+        content: "≪";
+      }
+
+      &.page-prev:before,
+      &.page-next:before {
+        content: "＜";
+      }
+
+      &.page-last:before,
+      &.page-next:before {
+        transform: translate(-50%, -50%) rotate(180deg)
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .inquiry-container {
     .inner-dl {
@@ -2013,6 +2091,7 @@ section {
     align-items: center;
     width:100%;
     padding:20px 0;
+    padding-right:65px;
     line-height:1.1;
     position:relative;
     color:#111;
@@ -2098,8 +2177,12 @@ section {
     }
 
     .tit {
+      display:block;
       font-size:20px;
       font-weight:700;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .dec {
@@ -2112,6 +2195,88 @@ section {
   }
 }
 
+.bbs-detail {
+  .sec-header {
+    display:block;
+    text-align:center;
+    padding-bottom:20px;
+
+    .info-flex {
+      justify-content: center;
+      font-size:18px;
+      margin-top:20px;
+      color:#111;
+
+      & > li {
+        &::after {
+          content:"/";
+          padding:0 5px;
+          display:inline-block;
+        }
+
+        &:last-child {
+          &::after {
+            display:none;
+          }
+        }
+      }
+    }
+  }
+
+  .editor-container {
+    border-top:2px solid #e7e6dd;
+    border-bottom:2px solid #e7e6dd;
+    padding:30px 15px;
+    font-size:18px;
+  }
+
+  .next-container {
+    border-bottom:2px solid #e7e6dd;
+
+    .flex {
+      justify-content: space-between;
+    }
+
+    .page-item {
+      display:block;
+      padding:20px;
+      color:#767676;
+      font-size:18px;
+      position:relative;
+
+      &.prev,
+      &.next {
+        &::after {
+          content:"";
+          display:block;
+          width:12px;
+          height:17px;
+          background:url(https://static.econtents.co.kr/_img/iyeo/arrow_next.webp) center no-repeat;
+          background-size:cover;
+          position:absolute;
+          top:50%;
+          transform: translate(0, -50%);
+        }
+      }
+
+      &.prev {
+        padding-left:25px;
+        &::after {
+          left:0;
+          transform: translate(0, -50%) rotate(180deg);
+        }
+      }
+
+      &.next {
+        padding-right:25px;
+
+        &::after {
+          right:0;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .bbs-list {
     .link-item {

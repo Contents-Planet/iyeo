@@ -74,6 +74,20 @@ if($type === "startups") {
               <input type='hidden' value='write' name='mode'>
               <input type='hidden' value='<?= $type ?>' name='type'>
 
+              <dl class="chk-dl drop-box" data-selector="dropContainer">
+                <dt>
+                  <label href="javascript:void(0)" class="chk-label drop-chk" data-action="allChk">
+                    <input type="checkbox" name="privacy" value="" placeholder="개인정보취급방침을 동의하셔야 서비시를 이용하실 수 있습니다." data-validate="req" />
+                    <span class="txt">개인정보취급방침을 읽었으며 이에 동의합니다. <small class="req-txt">(필수)</small></span>
+                    <input type="hidden" name="privacy_view" />
+                  </label>
+                  <a href="javascript:void(0)" class="btn-drop" data-action="dropDown" data-sid="1">전문보기</a>
+                </dt>
+                <dd class="drop-wrap">
+
+                </dd>
+              </dl>
+
               <div class="inquiry-container">
                 <dl class="inner-dl">
                   <dt><label class="label req" for="name">성명</label></dt>

@@ -62,6 +62,7 @@ $page = $_GET['page'] ?? 1;
         <div class="m-main">
           <article class="article">
             <ul class="bbs-list" data-selector="listAppend"></ul>
+            <div class="paging-container" data-selector="pageing"><!-- append --></div>
           </article>
         </div>
       </section>
