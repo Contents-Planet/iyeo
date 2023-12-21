@@ -38,18 +38,21 @@ switch ($mode) {
       };
       $iyeoService->inquiryCreate($inputData);
 
-      echo ("<script> alert('문의를 등록했습니다.'); location.href='/page/inquiry_success.php?type=". $type ."'; </script>");
+      echo ("<script> alert('문의를 등록했습니다.'); location.href='/page/inquiry_success.php?type=" . $type . "'; </script>");
     } catch (Exception $e) {
       // echo $e->getMessage();
       exit;
     }
     break;
+
   case "getList":
     try {
       $iyeoService = new IyeoService();
-      $page = $_GET['page'] ?? 1;
-      $type = $_GET['type'] ?? "customer";
-      $datas = $iyeoService->inquiryList($type,$page);
+      $page = $_POST['page'] ?? 1;
+      $type = $_POST['type'] ?? "customer";
+      $datas = $iyeoService->inquiryList($type, $page);
+      $inquiryCount = $iyeoService->inquiryCount($type);
+
       $cnt = 0;
 
       foreach ($datas as $data) {
@@ -63,14 +66,83 @@ switch ($mode) {
       }
 
       $results["result"] = 200;
+      $results["total_count"] = $inquiryCount;
       echo json_encode($results);
 
     } catch (Exception $e) {
+
       echo json_encode([
         "result" => 400,
         "message" => $e->getMessage()
       ]);
-      break;
+
     }
+    break;
+
+  case "passwordCheck":
+    try {
+      $seq = $_POST['seq'];
+      $password = $_POST['password'];
+
+      $iyeoService = new IyeoService();
+
+      $inquiryPwd = $iyeoService->inquiryDetail($seq)['pw'];
+
+      $results["result"] = 200;
+      $results["seq"] = $seq;
+      $results["passwordCheck"] = ($password == $inquiryPwd);  
+
+      echo json_encode($results);
+
+    } catch (Exception $e) {
+
+      echo json_encode([
+        "result" => 400,
+        // "message" => $e->getMessage()
+      ]);
+
+    }
+
+    break;
+
+    case "viewDetail":
+      try {
+        $seq = $_POST['seq'];
+
+        $iyeoService = new IyeoService();
+
+        $data = $iyeoService->inquiryDetail($seq);
+    
+        $results["datas"] = [
+          "seq" => $data['seq'],
+          "inquiry_type" => $data['inquiry_type'],
+          "name" => $data['name'],
+          "phone" => $data['phone'],
+          "area" => $data['area'],
+          "area2" => $data['area2'],
+          "area3" => $data['area3'],
+          "title" => $data['title'],
+          "content" => $data['content'],
+          "check_name" => $data['check_name'],
+          "is_check" => $data['is_check'],
+          "check_date" => $data['check_date'],
+          "memo" => $data['memo'],
+          "created_at" => $data['created_at'],
+        ];
+
+        $results["result"] = 200;
+
+        echo json_encode($results);
+  
+      } catch (Exception $e) {
+  
+        echo json_encode([
+          "result" => 400,
+          "message" => $e->getMessage()
+        ]);
+  
+      }
+  
+      break;
 };
 exit;

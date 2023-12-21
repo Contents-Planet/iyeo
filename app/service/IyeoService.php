@@ -33,7 +33,7 @@ class IyeoService extends MysqlService
     public function inquiryCount($type =""): mixed
     {
         $where = [
-            "type = '".$type."'" , 
+            "inquiry_type = '".$type."'" , 
         ];
         return $this->getDataCount($this->table, $where);
     }
@@ -41,6 +41,14 @@ class IyeoService extends MysqlService
     public function inquiryCreate($data): void
     {
         $this->createRow($this->table, $data);
+    }
+
+    public function inquiryDetail($seq): array
+    {
+        $where = ["seq = " . $seq];
+        $column = ["*"];
+
+        return $this->getSingleSelect($this->table, $where, $column);
     }
 
 
