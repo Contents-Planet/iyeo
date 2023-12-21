@@ -1,20 +1,18 @@
+var __nowPage = ND.RETURN.param("page") ? ND.RETURN.param("page") : 1;
 
-$(function(){
+	$(function(){
 	Page.Init();
 })
 
 var Page = {
 	GetData : function(formData, _callback){
 		var ajaxUrl = '/routes/api';
-		var page = $("#inquiry_page").val() ?? 1;
+
 		$.ajax({
 			type: 'post',
 			dataType: 'json',
 			url: ajaxUrl,
-			data: {
-				"mode" : "getList",
-				"page" : page
-			},
+			data: formData,
 			success: function(response) {
 				if (typeof _callback === 'function') {
 					_callback.call(null, response);
@@ -25,18 +23,22 @@ var Page = {
 
 	Render : function(type){
 		var formData = {
-			type : type
+			mode : "getList",
+			type : type,
+			page : __nowPage
 		}
 		Page.GetData(formData,function(res){
 			if(res.result === 200 && res.datas) {
 				var datas = res.datas,
+					totCnt = res.total_count,
+					pageCnt = 10,
+					no = totCnt - pageCnt * (__nowPage - 1),
 					html = "";
 
-				var no = '4';
 				$.each(datas, function(index, row) {
 
 					html += '	<li>';
-					html += '		<a href="'+ (type === "customer" ? 'javascript:void(0)' : '/page/inquiry_view') +'" class="link-item" '+ (type === "customer" ? 'data-action="qnaView"' : '') +'>';
+					html += '		<a href="'+ (type === "customer" ? 'javascript:void(0)' : '/page/inquiry_view?type='+ type +'&seq='+ row.seqs) +'" class="link-item" '+ (type === "customer" ? 'data-action="qnaView"' : '') +'>';
 					html += '			<strong class="no">'+ no +'</strong>';
 					html += '			<div class="dec-wrap">';
 					html += '				<strong class="tit">' + row.title + '</strong>';
@@ -65,6 +67,7 @@ var Page = {
 					no -= 1;
 				})
 				$("[data-selector=listAppend]").html(html);
+				PageCommon.AjaxPaging($("[data-selector=pageing]"), totCnt, parseInt(__nowPage), pageCnt, 5, '/page/inquiry', 'type='+ type);
 			}
 		})
 	},

@@ -25,6 +25,86 @@ var PageCommon = {
 		$("body, html").animate({scrollTop: moveTo}, '500');
 	},
 
+	/**
+	 * 비동기 전용 페이징 컨트롤
+	 *
+	 * @param _wraper
+	 * @param _total
+	 * @param _page
+	 * @param _row
+	 * @param _scale
+	 * @param _pagingCallback
+	 * @param _finishCallback
+	 * @returns {string}
+	 */
+	AjaxPaging: function (_wraper, _total, _page, _row, _scale, _url, _param, _pagingCallback, _finishCallback) {
+		var paging = "",
+			totalPage = 0,
+			start = 0,
+			end = 0,
+			prev = 0,
+			next = 0,
+			pageNum = [];
+
+		if (!_total) return "";
+
+		if (_row < 1) _row = 1;
+		if (_scale < 1) _scale = 1;
+		if (_page < 1) _page = 1;
+		totalPage = Math.ceil(_total / _row);
+		if (_page > totalPage) _page = totalPage;
+		if (_page < 1) _page = 1;
+
+		if (_total > 0) {
+			start = (Math.floor(_page / _scale) * _scale) + 1;
+			if (!(_page % _scale)) start -= _scale;
+
+			prev = start - _scale;
+			next = start + _scale;
+
+			if (start < 1) start = 1;
+			end = start + _scale - 1;
+			if (end > totalPage) end = totalPage;
+			if (prev < 1) prev = 1;
+			if (next > totalPage) next = totalPage;
+		}
+
+		for (var i = start; i <= end; i++)
+			pageNum.push(i);
+
+		paging = '<ul class="paging"> ';
+
+		if (start > 1) {
+			//paging += '<li><a href="javascript:;" data-page="1">&lt;&lt;</a></li> ';
+		}
+		if (_scale < end) {
+			paging += '<li><a href="' + _url + '?page=1' + (_param ? "&" + _param : "") + '" class="page-first page"><span class="a11y">처음</span></a></li> ';
+			paging += '<li><a href="' + _url + '?page=' + prev + (_param ? "&" + _param : "") + '" class="page-prev page"><span class="a11y">이전</span></a></li> ';
+		}
+
+		for (var i = 0; i < pageNum.length; i++) {
+			if (pageNum[i] === parseInt(_page)) paging += ' <li><a href="javascript:void(0);" class="_active page">' + pageNum[i] + '</a></li> ';
+			else paging += ' <li><a href="' + _url + '?page=' + pageNum[i] + (_param ? '&' + _param : '') + '" class="page">' + pageNum[i] + '</a></li> ';
+		}
+
+		if (next !== end) {
+			paging += ' <li><a href="' + _url + '?page=' + next + (_param ? '&' + _param : '') + '" class="page-next page" data-page="' + next + '"><span class="a11y">다음</span></a></li> ';
+			paging += '<li><a href="' + _url + '?page=' + totalPage + (_param ? '&' + _param : '') + '" class="page-last page"><span class="a11y">마지막</span></a></li> ';
+		}
+
+		paging += "</ul>";
+
+		_wraper.html(paging);
+		_wraper.find('.paging > li > a').on("click", function () {
+			var currentPage = $(this).attr("data-page");
+
+			//console.log(currentPage);
+			if (typeof _pagingCallback === "function") _pagingCallback.call(null, currentPage);
+		});
+
+		if (typeof _finishCallback === "function") _finishCallback.call();
+	},
+
 	Bind : function(){
 
 	},
@@ -151,3 +231,4 @@ var Map = {
 		})
 	}
 }
+

@@ -63,7 +63,8 @@ switch ($mode) {
 
       foreach ($datas as $data) {
         $results["datas"][$cnt]["seqs"] = $data['seq'];
-        $results["datas"][$cnt]["name"]  = preg_replace('/.(?=.$)/u', '*', $data['name']);
+        $results["datas"][$cnt]["inquiry_type"] = $data['inquiry_type'];
+        $results["datas"][$cnt]["name"]  = ($type === "notice" ? $data['name'] : preg_replace('/.(?=.$)/u', '*', $data['name']) );
         $results["datas"][$cnt]["title"] = $data['title'];
         $results["datas"][$cnt]["content"] = $data['content'];
         $results["datas"][$cnt]["reg_date"] = date("Y-m-d", strtotime($data['created_at']));

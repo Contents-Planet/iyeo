@@ -439,6 +439,16 @@ body .noscroll {
   text-align: center;
 }
 
+.btn-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+.btn-right .btn {
+  width: 100px;
+  max-width: 150px;
+}
+
 section {
   position: relative;
   margin: 0 auto;
@@ -1574,6 +1584,60 @@ section.sec {
   max-width: 300px;
 }
 
+.paging-container {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.paging-container .paging {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.paging-container .paging > li {
+  padding: 0 3px;
+}
+.paging-container .paging .page {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #322b29;
+  position: relative;
+  text-align: center;
+  line-height: 38px;
+  color: #322b29;
+}
+.paging-container .paging .page._active {
+  color: #fff;
+  background-color: #322b29;
+}
+.paging-container .paging .page.page-first, .paging-container .paging .page.page-prev, .paging-container .paging .page.page-next, .paging-container .paging .page.page-last {
+  border-color: #e3e3e3;
+}
+.paging-container .paging .page.page-first:before, .paging-container .paging .page.page-prev:before, .paging-container .paging .page.page-next:before, .paging-container .paging .page.page-last:before {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.paging-container .paging .page.page-first:before, .paging-container .paging .page.page-last:before {
+  content: "≪";
+}
+.paging-container .paging .page.page-prev:before, .paging-container .paging .page.page-next:before {
+  content: "＜";
+}
+.paging-container .paging .page.page-last:before, .paging-container .paging .page.page-next:before {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .inquiry-container .inner-dl > dt, .inquiry-container .inner-dl > dd {
+    width: 100%;
+  }
+}
 /* page-mall */
 .page-mall #contents {
   padding: 0;
@@ -1588,6 +1652,7 @@ section.sec {
   align-items: center;
   width: 100%;
   padding: 20px 0;
+  padding-right: 65px;
   line-height: 1.1;
   position: relative;
   color: #111;
@@ -1657,8 +1722,12 @@ section.sec {
   width: auto;
 }
 .bbs-list .dec-wrap .tit {
+  display: block;
   font-size: 20px;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .bbs-list .dec-wrap .dec {
   font-size: 18px;
@@ -1666,6 +1735,69 @@ section.sec {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.bbs-detail .sec-header {
+  display: block;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.bbs-detail .sec-header .info-flex {
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #111;
+}
+.bbs-detail .sec-header .info-flex > li::after {
+  content: "/";
+  padding: 0 5px;
+  display: inline-block;
+}
+.bbs-detail .sec-header .info-flex > li:last-child::after {
+  display: none;
+}
+.bbs-detail .editor-container {
+  border-top: 2px solid #e7e6dd;
+  border-bottom: 2px solid #e7e6dd;
+  padding: 30px 15px;
+  font-size: 18px;
+}
+.bbs-detail .next-container {
+  border-bottom: 2px solid #e7e6dd;
+}
+.bbs-detail .next-container .flex {
+  justify-content: space-between;
+}
+.bbs-detail .next-container .page-item {
+  display: block;
+  padding: 20px;
+  color: #767676;
+  font-size: 18px;
+  position: relative;
+}
+.bbs-detail .next-container .page-item.prev::after, .bbs-detail .next-container .page-item.next::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 17px;
+  background: url(https://static.econtents.co.kr/_img/iyeo/arrow_next.webp) center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.bbs-detail .next-container .page-item.prev {
+  padding-left: 25px;
+}
+.bbs-detail .next-container .page-item.prev::after {
+  left: 0;
+  transform: translate(0, -50%) rotate(180deg);
+}
+.bbs-detail .next-container .page-item.next {
+  padding-right: 25px;
+}
+.bbs-detail .next-container .page-item.next::after {
+  right: 0;
 }
 
 @media screen and (max-width: 768px) {
