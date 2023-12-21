@@ -52,4 +52,27 @@ class IyeoService extends MysqlService
     }
 
 
+    public function productList($page)
+    {
+        $orderBy = [
+            "column" => "sort",
+            "sort" => "desc"
+        ];
+        $column = ["*"];
+        $where = [
+            "is_active = 'Y' " , 
+        ];
+
+        return $this->getMultiSelect("product", $where, $column, $orderBy,$page,10);
+    }
+    
+    public function productCount(): mixed
+    {
+        $where = [
+            "is_active = 'Y' " , 
+        ];
+        return $this->getDataCount("product", $where);
+    }
+
+
 }

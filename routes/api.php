@@ -107,6 +107,39 @@ switch ($mode) {
 
     break;
 
+  case "getProducts":
+    try {
+      $iyeoService = new IyeoService();
+      $page = $_POST['page'] ?? 1;
+      $datas = $iyeoService->productList($page);
+      $productCount = $iyeoService->productCount($type);
+
+      $cnt = 0;
+
+      foreach ($datas as $data) {
+        $results["datas"][$cnt]["seqs"] = $data['seq'];
+        $results["datas"][$cnt]["name"]  =$data['name'];
+        $results["datas"][$cnt]["sort"] = $data['sort'];
+        $results["datas"][$cnt]["content"] = $data['content'];
+        $results["datas"][$cnt]["reg_date"] = date("Y-m-d", strtotime($data['reg_date']));
+        $results["datas"][$cnt]["img"] = $data['img'];
+        $cnt++;
+      }
+
+      $results["result"] = 200;
+      $results["total_count"] = $productCount;
+
+      echo json_encode($results);
+    } catch (Exception $e) {
+
+      echo json_encode([
+        "result" => 400,
+        "message" => $e->getMessage()
+      ]);
+    }
+
+    break;
+
   case "viewDetail":
     try {
       $seq = $_POST['seq'];
