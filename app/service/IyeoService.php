@@ -1,5 +1,4 @@
 <?
-
 namespace app\service;
 
 require_once  $_SERVER["DOCUMENT_ROOT"] . '/app/service/MysqlService.php';
@@ -43,10 +42,14 @@ class IyeoService extends MysqlService
         $this->createRow($this->table, $data);
     }
 
-    public function inquiryDetail($seq): array
+    public function inquiryDetail($seq,$type=""): array
     {
         $where = ["seq = " . $seq];
         $column = ["*"];
+
+        if($type){
+            array_push($where,"inquiry_type = '".$type."'") ;
+        }
 
         return $this->getSingleSelect($this->table, $where, $column);
     }
@@ -74,5 +77,28 @@ class IyeoService extends MysqlService
         return $this->getDataCount("product", $where);
     }
 
+    public function getNextPreSeqs($seq,$type){
+        
+        $column = ["
+            (SELECT seq FROM ".$this->table." WHERE inquiry_type = '".$type."' AND seq < ".$seq." ORDER BY seq DESC LIMIT 1) as preSeq,
+            (SELECT seq FROM ".$this->table." WHERE inquiry_type = '".$type."' AND seq > ".$seq." ORDER BY seq LIMIT 1) as nextSeq
+        "];
+
+        $where = ["inquiry_type = '".$type."' "];
+
+        return $this->getSingleSelect($this->table, $where, $column);
+    
+    }
+
+    
+    public function hitAddCount($seq,$hit){
+        
+        $where = [" seq = " . $seq];
+        $set = [
+            "hit" => (int)$hit+1
+        ];
+        $this->updateRows($this->table, $set, $where);
+    
+    }
 
 }

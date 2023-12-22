@@ -1,3 +1,7 @@
+<?php
+error_reporting(0);
+
+?>
 <ul id="skipNavi">
   <li><a href="#container" >본문바로가기</a></li>
 </ul>

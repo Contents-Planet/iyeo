@@ -1,4 +1,9 @@
 <?php
+error_reporting(0);
+require_once $_SERVER["DOCUMENT_ROOT"] . '/app/service/IyeoService.php';
+use app\service\IyeoService;
+
+$seq = $_GET['seq'];
 $type = $_GET['type'] ?? "notice";
 if($type === "notice") {
   $_title =  "공지사항";
@@ -7,6 +12,20 @@ if($type === "notice") {
   $_title = "1:1 문의";
   $_depth2 =  "2";
 }
+
+$service = new IyeoService();
+$data = $service->inquiryDetail($seq,$type);
+$seqs = $service->getNextPreSeqs($seq,$type);
+$seqs = $service->hitAddCount($seq,$data['hit']);
+$preSeq = $seqs['preSeq'];
+$nextSeq = $seqs['nextSeq'];
+
+$defaultPagePath = "/page/inquiry_view?type=".$type."&seq=";
+
+$nextPageText = ($seqs['nextSeq']) ? "다음글" : "다음글이 없습니다.";
+$nextPagePath = ($seqs['nextSeq']) ? $defaultPagePath.$seqs['nextSeq'] : "javascript:void(0)";
+$prePageText = ($seqs['preSeq']) ? "이전글" : "이전글이 없습니다.";
+$prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascript:void(0)";
 ?>
 
 <!doctype html>
@@ -54,34 +73,24 @@ if($type === "notice") {
         <div class="m-main">
           <div class="bbs-detail">
             <header class="sec-header">
-              <h2 class="small-tit">이여곰탕 김포장기점 오픈</h2>
+              <h2 class="small-tit"><?= $data['title'] ?></h2>
               <ul class="info-flex flex">
-                <li>작성자</li>
-                <li>23-10-10 09:53</li>
-                <li><span class="view">12명이 이 글을 읽었습니다.</span></li>
+                <li><?= $data['name'] ?></li>
+                <li><?= $data['created_at'] ?></li>
+                <li><span class="view"><?= $data['hit'] ?>명이 이 글을 읽었습니다.</span></li>
               </ul>
             </header>
             <div class="editor-container">
-              안녕하세요. 이여F&B 입니다.<br />
-              긴 연휴가 지나고 선선해진 바람에 가을이 성큼다가온 것을 느낍니다.<br />
-              아름다운 계절의 변화와 함께 저희 이여곰탕 김포장기점이 오픈합니다!<br /><br />
-
-              * 이여곰탕 김포장기점<br />
-              - 오픈 : 11월 30일 목요일<br />
-              - 위치 : 경기도 김포시 장기동 2083-6 김포마스터비즈파크 1층<br />
-              - 연락처 : 070-7704-9800<br /><br />
-
-              많은 관심과 사랑 부탁드리며, 문의사항 있으시면 언제든지 연락 주시기 바랍니다.<br />
-              감사합니다.
+              <?= $data['content'] ?>
             </div>
             <div class="next-container">
               <ul class="flex">
                 <li>
-                  <a href="/page/inquiry_view?type=notice&seq=22" class="page-item prev">이전글</a>
+                  <a href="<?=$prePagePath?>" class="page-item prev"><?= $prePageText ?></a>
                 </li>
 
                 <li>
-                  <a href="javascript:void(0)" class="page-item next none">다음글이 없습니다.</a>
+                  <a href="<?=$nextPagePath?>" class="page-item next none"><?= $nextPageText ?></a>
                 </li>
               </ul>
             </div>

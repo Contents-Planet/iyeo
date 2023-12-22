@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $type = $_GET['type'] ?? "notice";
 if($type === "startups") {
   $_title =  "창업 문의";

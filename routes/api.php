@@ -148,7 +148,8 @@ switch ($mode) {
       $iyeoService = new IyeoService();
 
       $data = $iyeoService->inquiryDetail($seq);
-
+      // $preNextSeqs = $iyeoService->getNextPreSeqs($seq);
+     
       $results["datas"] = [
         "seq" => $data['seq'],
         "inquiry_type" => $data['inquiry_type'],
@@ -167,6 +168,8 @@ switch ($mode) {
       ];
 
       $results["result"] = 200;
+
+      
 
       echo json_encode($results);
     } catch (Exception $e) {
