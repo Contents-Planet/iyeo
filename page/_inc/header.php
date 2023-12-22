@@ -8,7 +8,7 @@ error_reporting(0);
 <div class="gnb-container">
   <div class="m-main flex">
     <h1 id="logo"><a href="/" class="logo-item"><span class="a11y">이여F&B</span></a></h1>
-    <nav class="col-nav" style="max-width: 600px;">
+    <nav class="col-nav">
       <ul>
         <li><a href="/page/about" class="nav-item" data-selector="depth1" data-sid="1">브랜드 소개</a></li>
         <li><a href="/page/menu" class="nav-item" data-selector="depth1" data-sid="2">메뉴 소개</a></li>
