@@ -98,8 +98,8 @@ var Page = {
 		pop += '						<dl>';
 		pop += '							<dt><label class="label req" for="_psw">비밀번호</label></dt>';
 		pop += '							<dd>';
-		pop += '								<input type="password" name="psw" id="_psw" placeholder="비밀번호를 입력해주세요."/>';
 		pop += '								<input type="hidden" name="seq" value="'+ seq +'"/>';
+		pop += '								<input type="password" name="psw" id="_psw" placeholder="비밀번호를 입력해주세요."/>';
 		pop += '							</dd>';
 		pop += '						</dl>';
 		pop += '						<div class="btn-wrap"><a href="javascript:void(0)" class="btn c-black" data-action="chkSubmit">확인</a></div>';
@@ -159,6 +159,13 @@ var Page = {
 		$(document).on("click", "[data-action=chkSubmit]", function(){
 			Page.ChkSubmit($(this));
 		})
+
+		$("[type=password]").unbind("keydown");
+		$(document).on("keydown", "[type=password]", function(e) {
+			if (e.keyCode === 13) {
+				e.preventDefault();
+			};
+		});
 
 		$("[data-action=popClose]").unbind("click");
 		$(document).on("click", "[data-action=popClose]", function(){
