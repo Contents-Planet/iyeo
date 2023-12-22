@@ -6,7 +6,7 @@ error_reporting(0);
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 <meta name="description" content="각종 매스컴과 인플루언서들이 극찬한 이여곰탕의 변치 않는 맛!서울 4대 한우곰탕 선정, 합리적인 원가율과 차별화된 노하우, 효율적 매장 운영으로 매출이 극대화됩니다." />
-<meta name="keywords" content="이여곰탕, 서울4대곰탕, 곰탕, 곰탕 프렌차이즈, 한우곰탕, 창업문의, 이여F&B" />
+<meta name="keywords" content="이여곰탕, 이여곰탕 프랜차이즈, 서울4대곰탕, 곰탕, 곰탕 프렌차이즈, 한우곰탕, 창업문의, 이여F&B" />
 
 <meta property="og:site_name" content="이여 F&B" />
 <meta property="og:description" content="각종 매스컴과 인플루언서들이 극찬한 이여곰탕의 변치 않는 맛!서울 4대 한우곰탕 선정, 합리적인 원가율과 차별화된 노하우, 효율적 매장 운영으로 매출이 극대화됩니다." />
