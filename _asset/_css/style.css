@@ -1785,13 +1785,13 @@ textarea {
   text-align: left;
 }
 .bbs-list .link-item.notice-item .date {
-  margin-bottom: 5px;
-  color: #999;
-  font-weight: 500;
+  padding: 10px 0;
+  margin-top: 0;
+  font-size: 20px;
 }
 .bbs-list .link-item.notice-item .dec-wrap {
   width: 100%;
-  margin-top: 5px;
+  margin-top: 0;
 }
 .bbs-list .no {
   font-size: 32px;
