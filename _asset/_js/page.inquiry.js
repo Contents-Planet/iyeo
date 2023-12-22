@@ -144,7 +144,11 @@ var Page = {
 
 		Page.GetData(formData, function(res){
 			if(res.result === 200) {
-				fm.attr("action", "/page/inquiry_view?type="+ __type +"&seq="+ seq).submit();
+				if(res.passwordCheck){
+					fm.attr("action", "/page/inquiry_view?type="+ __type +"&seq="+ seq).submit();
+				}else{
+					alert("비밀번호가 일치하지 않습니다.");
+				}
 			} else {
 				alert("정확한 비밀번호를 입력해주세요.");
 				return;
