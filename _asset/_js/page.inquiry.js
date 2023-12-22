@@ -30,46 +30,51 @@ var Page = {
 			page : __nowPage
 		}
 		Page.GetData(formData,function(res){
-			if(res.result === 200 && res.datas) {
+			if(res.result === 200) {
 				var datas = res.datas,
 					totCnt = res.total_count,
 					pageCnt = 10,
 					no = totCnt - pageCnt * (__nowPage - 1),
 					html = "";
 
-				$.each(datas, function(index, row) {
+				if(datas) {
+					$.each(datas, function(index, row) {
 
-					html += '	<li>';
-					html += '		<a href="'+ (type === "customer" ? 'javascript:void(0)' : '/page/inquiry_view?type='+ type +'&seq='+ row.seqs) +'" class="link-item" '+ (type === "customer" ? 'data-action="qnaView"' : '') +' data-seq="' + row.seqs + '">';
-					html += '			<strong class="no">'+ no +'</strong>';
-					html += '			<div class="dec-wrap">';
-					html += '				<strong class="tit">' + row.title + '</strong>';
-					if(type === "notice") {
-						html += '				<p class="dec">' + row.content + '</p>';
-					}
-					html += '				<dl class="writer">';
-					html += '					<dt>'+ row.name + '</dt>';
-					html += '					<dd>'+ row.reg_date + '</dd>';
-					html += '				</dl>'
-					html += '			</div>';
-					html += '		</a>';
-					if(row.reple_yn === "Y") {
-						html += '		<a href="" class="link-item type-re">';
-						html += '			<div class="dec-wrap flex">';
+						html += '	<li>';
+						html += '		<a href="'+ (type === "customer" ? 'javascript:void(0)' : '/page/inquiry_view?type='+ type +'&seq='+ row.seqs) +'" class="link-item" '+ (type === "customer" ? 'data-action="qnaView"' : '') +' data-seq="' + row.seqs + '">';
+						html += '			<strong class="no">'+ no +'</strong>';
+						html += '			<div class="dec-wrap">';
 						html += '				<strong class="tit">' + row.title + '</strong>';
+						if(type === "notice") {
+							html += '				<p class="dec">' + row.content + '</p>';
+						}
 						html += '				<dl class="writer">';
 						html += '					<dt>'+ row.name + '</dt>';
 						html += '					<dd>'+ row.reg_date + '</dd>';
-						html += '				</dl>';
+						html += '				</dl>'
 						html += '			</div>';
 						html += '		</a>';
+						if(row.reple_yn === "Y") {
+							html += '		<a href="" class="link-item type-re">';
+							html += '			<div class="dec-wrap flex">';
+							html += '				<strong class="tit">' + row.title + '</strong>';
+							html += '				<dl class="writer">';
+							html += '					<dt>'+ row.name + '</dt>';
+							html += '					<dd>'+ row.reg_date + '</dd>';
+							html += '				</dl>';
+							html += '			</div>';
+							html += '		</a>';
+							html += '	</li>';
+						}
 						html += '	</li>';
-					}
-					html += '	</li>';
-					no -= 1;
-				})
+						no -= 1;
+					})
+					PageCommon.AjaxPaging($("[data-selector=pageing]"), totCnt, parseInt(__nowPage), pageCnt, 5, '/page/inquiry', 'type='+ type);
+				} else {
+					html += '	<li><p class="no-data">등록된 게시글이 없습니다.</p></li>';
+				}
+
 				$("[data-selector=listAppend]").html(html);
-				PageCommon.AjaxPaging($("[data-selector=pageing]"), totCnt, parseInt(__nowPage), pageCnt, 5, '/page/inquiry', 'type='+ type);
 			}
 		})
 	},

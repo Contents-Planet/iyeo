@@ -51,8 +51,8 @@ $page = $_GET['page'] ?? 1;
             <a href="javascript:void(0)" class="nav-item ico" data-action="drop"><?=$_title?></a>
             <div class="drop-wrap">
               <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="/page/inquiry?type=notice">공지사항</a>
-              <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="/page/inquiry?type=customer">1:1문의</a>
-              <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="">채용공고</a>
+              <!--<a href="javascript:void(0)" class="nav-item" data-action="value" data-url="/page/inquiry?type=customer">1:1문의</a>
+              <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="">채용공고</a>-->
             </div>
           </div>
         </li>
@@ -65,10 +65,16 @@ $page = $_GET['page'] ?? 1;
       <section class="sec">
         <div class="m-main">
           <article class="article">
+            <header class="sec-header">
+              <h3 class="small-tit"><?= $_title ?></h3>
+            </header>
+
             <ul class="bbs-list" data-selector="listAppend"></ul>
             <div class="paging-container">
               <ul class="paging" data-selector="pageing"></ul>
-              <a href="/page/inquiry_write?type=<?=$type?>" class="btn c-brown">등록하기</a>
+              <?php if($type !== "notice") { ?>
+                <a href="/page/inquiry_write?type=<?=$type?>" class="btn c-brown">등록하기</a>
+              <?php } ?>
             </div>
           </article>
         </div>

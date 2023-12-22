@@ -2043,6 +2043,7 @@ textarea {
   text-align: center;
   position:relative;
   padding:0 150px;
+  min-height:50px;
 
   .paging {
     display:flex;
@@ -2162,9 +2163,24 @@ textarea {
 }
 
 /* page-bbs */
+.page-bbs {
+  .sec-header {
+    padding-bottom:20px;
+    text-align:center;
+    border-bottom:2px solid #322b29;
+  }
+}
+
 .bbs-list {
   & > li {
     display:block;
+  }
+
+  .no-data {
+    padding: 100px 20px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom:2px solid #e7e6dd;
   }
 
   .link-item {

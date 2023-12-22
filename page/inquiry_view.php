@@ -63,8 +63,8 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
             <a href="javascript:void(0)" class="nav-item ico" data-action="drop"><?= $_title ?></a>
             <div class="drop-wrap">
               <a href="javascript:void(0)" class="nav-item <?= ($_depth2 === "1" ? "_active" : "") ?>" data-action="value" data-url="/page/inquiry?type=notice">공지사항</a>
-              <a href="javascript:void(0)" class="nav-item" <?= ($_depth2 === "2" ? "_active" : "") ?>data-action="value" data-url="/page/inquiry?type=customer">1:1문의</a>
-              <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="">채용공고</a>
+              <!--<a href="javascript:void(0)" class="nav-item" <?php /*= ($_depth2 === "2" ? "_active" : "") */?>data-action="value" data-url="/page/inquiry?type=customer">1:1문의</a>
+              <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="">채용공고</a>-->
             </div>
           </div>
         </li>

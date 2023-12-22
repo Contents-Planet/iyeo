@@ -50,14 +50,14 @@ if($type === "startups") {
         </li>
         <?php } ?>
         <?php if($type === "customer") { ?>
-          <li><span class="nav-item"><span class="txt">커뮤니티</span></span></li>
+          <li><span class="nav-item"><span class="txt">고객의 소리</span></span></li>
           <li>
             <div class="drop-box" data-selector="dropContainer" data-sid="moveLink">
-              <a href="javascript:void(0)" class="nav-item ico" data-action="drop">고객센터</a>
+              <a href="javascript:void(0)" class="nav-item ico" data-action="drop">공지사항</a>
               <div class="drop-wrap">
                 <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="/page/inquiry?type=notice">공지사항</a>
-                <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="/page/inquiry?type=customer">1:1문의</a>
-                <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="">채용공고</a>
+                <!--<a href="javascript:void(0)" class="nav-item" data-action="value" data-url="/page/inquiry?type=customer">1:1문의</a>
+                <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="">채용공고</a>-->
               </div>
             </div>
           </li>
