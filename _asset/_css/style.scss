@@ -2185,6 +2185,7 @@ textarea {
 
   .link-item {
     display:flex;
+    flex-wrap:wrap;
     align-items: center;
     width:100%;
     padding:20px 0;
@@ -2234,6 +2235,26 @@ textarea {
     .dec-wrap {
       width:calc(100% - 80px);
     }
+
+    &.notice-item {
+      padding-left:20px;
+
+      .no {
+        width:100%;
+        text-align:left;
+      }
+
+      .date {
+        margin-bottom:5px;
+        color:#999;
+        font-weight:500;
+      }
+
+      .dec-wrap {
+        width:100%;
+        margin-top:5px;
+      }
+    }
   }
 
   .no {
@@ -2282,7 +2303,7 @@ textarea {
       white-space: nowrap;
     }
 
-    .dec {
+    .editor {
       font-size:18px;
       margin-top:5px;
       overflow: hidden;

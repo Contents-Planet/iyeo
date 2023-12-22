@@ -37,24 +37,30 @@ var Page = {
 					no = totCnt - pageCnt * (__nowPage - 1),
 					html = "";
 
+				console.log(datas)
 				if(datas) {
 					$.each(datas, function(index, row) {
 
 						html += '	<li>';
-						html += '		<a href="'+ (type === "customer" ? 'javascript:void(0)' : '/page/inquiry_view?type='+ type +'&seq='+ row.seqs) +'" class="link-item" '+ (type === "customer" ? 'data-action="qnaView"' : '') +' data-seq="' + row.seqs + '">';
+						html += '		<a href="'+ (type === "customer" ? 'javascript:void(0)' : '/page/inquiry_view?type='+ type +'&seq='+ row.seqs) +'" class="link-item '+ (type === "notice" ? "notice-item" : '') +'" '+ (type === "customer" ? 'data-action="qnaView"' : '') +' data-seq="' + row.seqs + '">';
 						html += '			<strong class="no">'+ no +'</strong>';
 						html += '			<div class="dec-wrap">';
+						if(type === "notice") {
+							html += '				<p class="date">'+ row.reg_date + '</p>';
+						}
 						html += '				<strong class="tit">' + row.title + '</strong>';
 						if(type === "notice") {
-							html += '				<div class="editor">' + row.content + '</div>';
+							html += '				<div class="editor">' + row.content.replace(/(<([^>]+)>)/ig,"") + '</div>';
 						}
-						html += '				<dl class="writer">';
-						html += '					<dt>'+ row.name + '</dt>';
-						html += '					<dd>'+ row.reg_date + '</dd>';
-						html += '				</dl>'
+						if(type !== "notice") {
+							html += '				<dl class="writer">';
+							html += '					<dt>' + row.name + '</dt>';
+							html += '					<dd>' + row.reg_date + '</dd>';
+							html += '				</dl>'
+						}
 						html += '			</div>';
 						html += '		</a>';
-						if(row.reple_yn === "Y") {
+						/*if(row.reple_yn === "Y") {
 							html += '		<a href="" class="link-item type-re">';
 							html += '			<div class="dec-wrap flex">';
 							html += '				<strong class="tit">' + row.title + '</strong>';
@@ -65,7 +71,7 @@ var Page = {
 							html += '			</div>';
 							html += '		</a>';
 							html += '	</li>';
-						}
+						}*/
 						html += '	</li>';
 						no -= 1;
 					})

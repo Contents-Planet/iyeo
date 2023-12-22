@@ -1731,6 +1731,7 @@ textarea {
 }
 .bbs-list .link-item {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
   padding: 20px 0;
@@ -1776,6 +1777,22 @@ textarea {
 .bbs-list .link-item .dec-wrap {
   width: calc(100% - 80px);
 }
+.bbs-list .link-item.notice-item {
+  padding-left: 20px;
+}
+.bbs-list .link-item.notice-item .no {
+  width: 100%;
+  text-align: left;
+}
+.bbs-list .link-item.notice-item .date {
+  margin-bottom: 5px;
+  color: #999;
+  font-weight: 500;
+}
+.bbs-list .link-item.notice-item .dec-wrap {
+  width: 100%;
+  margin-top: 5px;
+}
 .bbs-list .no {
   font-size: 32px;
   display: block;
@@ -1811,7 +1828,7 @@ textarea {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.bbs-list .dec-wrap .dec {
+.bbs-list .dec-wrap .editor {
   font-size: 18px;
   margin-top: 5px;
   overflow: hidden;
