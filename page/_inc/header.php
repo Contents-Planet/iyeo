@@ -14,7 +14,7 @@ error_reporting(0);
         <li><a href="/page/menu" class="nav-item" data-selector="depth1" data-sid="2">메뉴 소개</a></li>
         <li><a href="/page/store" class="nav-item" data-selector="depth1" data-sid="3">매장 찾기</a></li>
         <li><a href="/page/startup" class="nav-item" data-selector="depth1" data-sid="4">창업 안내</a></li>
-        <li><a href="/page/notice" class="nav-item" data-selector="depth1" data-sid="5">고객의 소리</a></li>
+        <li><a href="/page/inquiry?type=notice" class="nav-item" data-selector="depth1" data-sid="5">고객의 소리</a></li>
         <li class="pc-hide"><a href="/page/mall" class="nav-item mall">이여몰</a></li>
       </ul>
     </nav>
