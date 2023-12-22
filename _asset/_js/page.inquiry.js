@@ -46,7 +46,7 @@ var Page = {
 						html += '			<div class="dec-wrap">';
 						html += '				<strong class="tit">' + row.title + '</strong>';
 						if(type === "notice") {
-							html += '				<p class="dec">' + row.content + '</p>';
+							html += '				<div class="editor">' + row.content + '</div>';
 						}
 						html += '				<dl class="writer">';
 						html += '					<dt>'+ row.name + '</dt>';
