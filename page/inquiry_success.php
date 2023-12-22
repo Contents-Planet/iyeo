@@ -78,7 +78,11 @@ else if($type === "customer") {
               <strong class="tit">고객센터: 1551-2508</strong>
             </header>
             <div class="btn-wrap">
-              <a href="/page/inquiry?type=<?=$type?>" class="btn c-brown s2">목록으로</a>
+              <?php if($type === "startups") { ?>
+                <a href="/" class="btn c-brown s2">홈으로</a>
+              <?php } else { ?>
+                <a href="/page/inquiry?type=<?=$type?>" class="btn c-brown s2">목록으로</a>
+              <?php } ?>
             </div>
           </article>
         </div>

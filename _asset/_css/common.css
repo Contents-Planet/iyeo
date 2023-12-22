@@ -229,13 +229,10 @@ area:focus{outline:1px solid blue}
 .chk-label .txt {padding-left:23px; font-size:18px; color:#444;position:relative; vertical-align: top;}
 .chk-label input {position:absolute; left:0; top:0; opacity: 0}
 .chk-label .txt:before,
-.chk-label :checked + .txt:after{
-	content:""; display:block; position:absolute; top:7px; left:0;
-	/*-webkit-transform: translate(0, -50%);  -moz-transform: translate(0, -50%);  -ms-transform: translate(0, -50%);  -o-transform: translate(0, -50%);  transform: translate(0, -50%);*/
-}
+.chk-label :checked + .txt:after{content:""; display:block; position:absolute; left:0; top:50%; transform:translate(0, -50%);}
 .chk-label .txt:before {width:17px; height:17px; border:2px solid #666; left:0;}
 .chk-label.radio .txt:before {border-radius: 100%;}
-.chk-label :checked + .txt:after {content:"\f00c";font-family: 'Font Awesome 5 Free';font-weight:900;display:inline-block; left:2px; top:8px; font-size:12px;}
+.chk-label :checked + .txt:after {content:"\f00c";font-family: 'Font Awesome 5 Free';font-weight:900;display:inline-block; left:3px;line-height:1; font-size:12px;}
 .chk-label.radio :checked + .txt:after {content:"";width:7px; height:7px; background:#333;top: 12px;left: 5px; border-radius: 100%;}
 
 .chk-label.checkbox input[type=checkbox] {position:absolute; left:0; top:0; opacity: 0}

@@ -18,6 +18,7 @@ error_reporting(0);
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 
+<link rel="stylesheet" href="//static.econtents.co.kr/_asset/_font/fontawesome-free-5.7.2-web/css/all.css" type="text/css" />
 <link rel="stylesheet" href="//static.econtents.co.kr/_asset/_lib/swiper/swiper.min.css" type="text/css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

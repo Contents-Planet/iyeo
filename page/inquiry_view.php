@@ -5,6 +5,8 @@ use app\service\IyeoService;
 
 $seq = $_GET['seq'];
 $type = $_GET['type'] ?? "notice";
+$psw = $_POST['psw'];
+
 if($type === "notice") {
   $_title =  "공지사항";
   $_depth2 =  "1";
@@ -38,7 +40,6 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
 
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/page/_inc/head.php"; ?>
 </head>
-
 <body>
 <div id="wrap" class="page-inquiry type-sub">
   <header id="header">
@@ -106,7 +107,5 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
     <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/page/_inc/footer.php"; ?>
   </footer>
 </div>
-<script src="/_asset/_js/page.inquiry.js"></script>
 </body>
-
 </html>

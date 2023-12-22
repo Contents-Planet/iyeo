@@ -1,5 +1,6 @@
 var __nowPage = ND.RETURN.param("page") ? ND.RETURN.param("page") : 1,
-	__type = ND.RETURN.param("type");
+	__type = ND.RETURN.param("type"),
+	__seq = ND.RETURN.param("seq");
 
 	$(function(){
 	Page.Init();
@@ -76,6 +77,13 @@ var Page = {
 	Submit : function(){
 		var $fm = $("[name=frm]");
 		if (ND.Form.Validate($fm)) {
+
+			if($("[name=privacy_view]").val() !== "Y") {
+				alert("개인정보취급방침을 확인하셔야 합니다.")
+				$("[data-action=privacyDrop]").click();
+				return;
+			}
+
 			if(confirm("등록 하시겠습니까?")) {
 				$fm.attr("action", "/routes/api").submit();
 			}
@@ -145,6 +153,28 @@ var Page = {
 		$("body").removeClass("_pop");
 	},
 
+	ViewDetail : function(){
+		var formData = {
+			mode : "viewDetail",
+			seq : __seq
+		}
+		Page.GetData(formData, function(res){
+			console.log(res)
+			/*if(res.result === 200) {
+				fm.attr("action", "/page/inquiry_view?type="+ __type +"&seq="+ seq).submit();
+			} else {
+				alert("정확한 비밀번호를 입력해주세요.");
+				return;
+			}*/
+		})
+	},
+
+	PrivacyDrop : function(e){
+		var $drop = e.closest("[data-selector=dropContainer]");
+		$drop.toggleClass("_open");
+		$("[name=privacy_view]").val("Y");
+	},
+
 	Bind: function () {
 		$("[data-action=submit]").unbind("click").on("click", function(){
 			Page.Submit();
@@ -170,6 +200,11 @@ var Page = {
 		$("[data-action=popClose]").unbind("click");
 		$(document).on("click", "[data-action=popClose]", function(){
 			Page.PopClose($(this));
+		})
+
+		$("[data-action=privacyDrop]").unbind("click");
+		$(document).on("click", "[data-action=privacyDrop]", function(){
+			Page.PrivacyDrop($(this));
 		})
 	},
 

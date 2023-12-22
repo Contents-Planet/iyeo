@@ -425,6 +425,12 @@ body.noscroll {
   line-height: 72px;
   font-size: 22px;
 }
+.btn.s1 {
+  height: 26px;
+  line-height: 26px;
+  font-size: 14px;
+  padding: 0 10px;
+}
 
 .btn-list {
   display: inline-block;
@@ -1603,6 +1609,16 @@ textarea {
   width: 100%;
   max-width: 300px;
 }
+.page-inquiry .chk-dl {
+  margin-top: 20px;
+  border: 2px solid #e7e7dd;
+  padding: 10px 20px;
+}
+.page-inquiry .chk-dl > dt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .paging-container {
   display: block;
@@ -1660,6 +1676,30 @@ textarea {
   right: 0;
   top: 50%;
   transform: translate(0, -50%);
+}
+
+.term-container {
+  padding: 20px;
+}
+.term-container .term-dl {
+  margin-bottom: 20px;
+}
+.term-container .term-dl:last-child {
+  margin-bottom: 0;
+}
+.term-container .term-dl > dt {
+  margin-bottom: 5px;
+}
+.term-container .term-dl .inner-dl {
+  margin-bottom: 10px;
+}
+.term-container .term-dl .inner-dl:last-child {
+  margin-bottom: 0;
+}
+.term-container .term-dl .tip {
+  color: #666;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 768px) {
