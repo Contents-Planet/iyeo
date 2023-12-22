@@ -44,7 +44,7 @@ switch ($mode) {
 
       $mailService->inquirySendMail();
 
-      echo ("<script> alert('문의를 등록했습니다.'); location.href='/page/inquiry_success.php?type=" . $type . "'; </script>");
+      echo ("<script>location.href='/page/inquiry_success.php?type=" . $type . "'; </script>");
     } catch (Exception $e) {
       // echo $e->getMessage();
       exit;
@@ -179,10 +179,5 @@ switch ($mode) {
 
     break;
 };
-
-
-
-
-
 
 exit;

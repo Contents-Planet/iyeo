@@ -62,7 +62,10 @@ $page = $_GET['page'] ?? 1;
         <div class="m-main">
           <article class="article">
             <ul class="bbs-list" data-selector="listAppend"></ul>
-            <div class="paging-container" data-selector="pageing"><!-- append --></div>
+            <div class="paging-container">
+              <ul class="paging" data-selector="pageing"></ul>
+              <a href="/page/inquiry_write?type=<?=$type?>" class="btn c-brown">등록하기</a>
+            </div>
           </article>
         </div>
       </section>

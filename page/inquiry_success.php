@@ -77,6 +77,9 @@ else if($type === "customer") {
               </p>
               <strong class="tit">고객센터: 1551-2508</strong>
             </header>
+            <div class="btn-wrap">
+              <a href="/page/inquiry?type=<?=$type?>" class="btn c-brown s2">목록으로</a>
+            </div>
           </article>
         </div>
       </section>

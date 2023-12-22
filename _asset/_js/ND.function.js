@@ -728,19 +728,22 @@ ND.Form = {
 
 		$.each($input, function(index,row){
 			if ($(row).attr('data-validate') === "req") {
-				if(!$(row).val()) {
-					var placeholder = $(row).attr('placeholder');
-					alert(placeholder);
-					$(row).focus();
-					exit = "true";
-					return false;
-				}
-				if($(row).attr("type") === "checkbox" && !$(row).prop("checked")) {
-					var placeholder = $(row).attr('placeholder');
-					alert(placeholder);
-					$(row).focus();
-					exit = "true";
-					return false;
+				if($(row).attr("type") === "checkbox") {
+					if($(row).attr("type") === "checkbox" && !$(row).prop("checked")) {
+						var placeholder = $(row).attr('placeholder');
+						alert(placeholder);
+						$(row).focus();
+						exit = "true";
+						return false;
+					}
+				} else {
+					if(!$(row).val()) {
+						var placeholder = $(row).attr('placeholder');
+						alert(placeholder);
+						$(row).focus();
+						exit = "true";
+						return false;
+					}
 				}
 			}
 

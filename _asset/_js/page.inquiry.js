@@ -1,4 +1,5 @@
-var __nowPage = ND.RETURN.param("page") ? ND.RETURN.param("page") : 1;
+var __nowPage = ND.RETURN.param("page") ? ND.RETURN.param("page") : 1,
+	__type = ND.RETURN.param("type");
 
 	$(function(){
 	Page.Init();
@@ -38,7 +39,7 @@ var Page = {
 				$.each(datas, function(index, row) {
 
 					html += '	<li>';
-					html += '		<a href="'+ (type === "customer" ? 'javascript:void(0)' : '/page/inquiry_view?type='+ type +'&seq='+ row.seqs) +'" class="link-item" '+ (type === "customer" ? 'data-action="qnaView"' : '') +'>';
+					html += '		<a href="'+ (type === "customer" ? 'javascript:void(0)' : '/page/inquiry_view?type='+ type +'&seq='+ row.seqs) +'" class="link-item" '+ (type === "customer" ? 'data-action="qnaView"' : '') +' data-seq="' + row.seqs + '">';
 					html += '			<strong class="no">'+ no +'</strong>';
 					html += '			<div class="dec-wrap">';
 					html += '				<strong class="tit">' + row.title + '</strong>';
@@ -81,13 +82,87 @@ var Page = {
 		}
 	},
 
+	ChkPsw : function(e){
+		var seq = e.data("seq"),
+			pop = '';
+
+		pop += '	<div class="pop-container pop-psw" data-selector="layerPop">';
+		pop += '		<div class="pop-inner">';
+		pop += '			<header class="pop-header">';
+		pop += '				<strong class="tit">비밀번호확인</strong>';
+		pop += '				<a href="javascript:void(0)" class="pop-close" data-action="popClose"><span class="a11y">팝업닫기</span></a>';
+		pop += '			</header>';
+		pop += '			<div class="pop-contents">';
+		pop += '				<form name="popFrm" method="post">';
+		pop += '					<div class="dl-flex">';
+		pop += '						<dl>';
+		pop += '							<dt><label class="label req" for="_psw">비밀번호</label></dt>';
+		pop += '							<dd>';
+		pop += '								<input type="password" name="psw" id="_psw" placeholder="비밀번호를 입력해주세요."/>';
+		pop += '								<input type="hidden" name="seq" value="'+ seq +'"/>';
+		pop += '							</dd>';
+		pop += '						</dl>';
+		pop += '						<div class="btn-wrap"><a href="javascript:void(0)" class="btn c-black" data-action="chkSubmit">확인</a></div>';
+		pop += '					</div>';
+		pop += '				</form>';
+		pop += '			</div>';
+		pop += '		</div>';
+		pop += '	</div>';
+
+		$("[data-selector=layerPop]").remove();
+		$("body").append(pop).addClass("_pop");
+	},
+
+	ChkSubmit : function(e){
+		var $pop = e.closest("[data-selector=layerPop]"),
+			fm = $pop.find("[name=popFrm]"),
+			seq = fm.find("[name=seq]").val(),
+			psw = fm.find("[name=psw]").val(),
+			formData = {
+				mode : "passwordCheck",
+				seq : seq,
+				password : psw
+			}
+
+			if(!psw) {
+				alert("비밀번호를 입력해주세요.");
+				return;
+			}
+
+		Page.GetData(formData, function(res){
+			if(res.result === 200) {
+				fm.attr("action", "/page/inquiry_view?type="+ __type +"&seq="+ seq).submit();
+			} else {
+				alert("정확한 비밀번호를 입력해주세요.");
+				return;
+			}
+		})
+	},
+
+	PopClose : function(e){
+		var $pop = e.closest("[data-selector=layerPop]");
+		$pop.remove();
+		$("body").removeClass("_pop");
+	},
+
 	Bind: function () {
 		$("[data-action=submit]").unbind("click").on("click", function(){
 			Page.Submit();
 		})
 
-		$("[data-action=qnaView]").unbind("click").on("click", function(){
-			Page.ViewDetail($(this));
+		$("[data-action=qnaView]").unbind("click");
+		$(document).on("click", "[data-action=qnaView]", function(){
+			Page.ChkPsw($(this));
+		})
+
+		$("[data-action=chkSubmit]").unbind("click");
+		$(document).on("click", "[data-action=chkSubmit]", function(){
+			Page.ChkSubmit($(this));
+		})
+
+		$("[data-action=popClose]").unbind("click");
+		$(document).on("click", "[data-action=popClose]", function(){
+			Page.PopClose($(this));
 		})
 	},
 

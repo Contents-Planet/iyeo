@@ -72,8 +72,7 @@ var PageCommon = {
 		for (var i = start; i <= end; i++)
 			pageNum.push(i);
 
-		paging = '<ul class="paging"> ';
-
+		paging = '';
 		if (start > 1) {
 			//paging += '<li><a href="javascript:;" data-page="1">&lt;&lt;</a></li> ';
 		}
@@ -91,8 +90,6 @@ var PageCommon = {
 			paging += ' <li><a href="' + _url + '?page=' + next + (_param ? '&' + _param : '') + '" class="page-next page" data-page="' + next + '"><span class="a11y">다음</span></a></li> ';
 			paging += '<li><a href="' + _url + '?page=' + totalPage + (_param ? '&' + _param : '') + '" class="page-last page"><span class="a11y">마지막</span></a></li> ';
 		}
-
-		paging += "</ul>";
 
 		_wraper.html(paging);
 		_wraper.find('.paging > li > a').on("click", function () {
