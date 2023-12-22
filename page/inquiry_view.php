@@ -8,11 +8,11 @@ $type = $_GET['type'] ?? "notice";
 $psw = $_POST['psw'];
 
 if($type === "notice") {
-  $_title =  "공지사항";
-  $_depth2 =  "1";
+  $_title = "공지사항";
+  $_depth2 = "1";
 } else if($type === "customer") {
   $_title = "1:1 문의";
-  $_depth2 =  "2";
+  $_depth2 = "2";
 } else {
   echo '<script>alert("잘못된 접근입니다."); location.href = "/";</script>';
   exit;
@@ -21,7 +21,8 @@ if($type === "notice") {
 $service = new IyeoService();
 $data = $service->inquiryDetail($seq,$type);
 $seqs = $service->getNextPreSeqs($seq,$type);
-$seqs = $service->hitAddCount($seq,$data['hit']);
+$service->hitAddCount($seq,$data['hit']);
+
 $preSeq = $seqs['preSeq'];
 $nextSeq = $seqs['nextSeq'];
 
