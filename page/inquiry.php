@@ -10,6 +10,10 @@ else if($type === "customer") {
   $_active = "5";
   $_depth = "2";
 }
+else {
+  echo '<script>alert("잘못된 접근입니다."); location.href = "/";</script>';
+  exit;
+}
 
 $page = $_GET['page'] ?? 1;
 ?>

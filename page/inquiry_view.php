@@ -10,9 +10,12 @@ $psw = $_POST['psw'];
 if($type === "notice") {
   $_title =  "공지사항";
   $_depth2 =  "1";
-} if($type === "customer") {
+} else if($type === "customer") {
   $_title = "1:1 문의";
   $_depth2 =  "2";
+} else {
+  echo '<script>alert("잘못된 접근입니다."); location.href = "/";</script>';
+  exit;
 }
 
 $service = new IyeoService();

@@ -4,9 +4,12 @@ $type = $_GET['type'] ?? "notice";
 if($type === "startups") {
   $_title =  "창업 문의";
   $_active = "4";
-} if($type === "customer") {
+} else if($type === "customer") {
   $_title = "1:1 문의";
   $_active = "5";
+} else {
+  echo '<script>alert("잘못된 접근입니다."); location.href = "/";</script>';
+  exit;
 }
 ?>
 
@@ -114,7 +117,7 @@ if($type === "startups") {
                           <input type="text" placeholder="구/군을 입력해주세요." name="area2" title="구/군" data-validate="req"/>
                         </li>
                       </ul>
-                      <input type="text" placeholder="상세주소를 입력해주세요." name="area3" title="상세주소" data-validate="req"/>
+                      <input type="text" placeholder="상세주소를 입력해주세요." name="area3" title="상세주소" />
                     </dd>
                   </dl>
                 <?php } ?>
