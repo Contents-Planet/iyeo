@@ -1,5 +1,4 @@
 @charset "utf-8";
-@charset "utf-8";
 
 /*-------layout--------------------------------------------------------*/
 body {
@@ -1166,8 +1165,8 @@ section {
     }
 
     .drop-wrap {
-      outline:1px solid rgba(255, 255, 255, 0.6);
-      outline-top:0;
+      border:1px solid rgba(255, 255, 255, 0.6);
+      border-top:0;
     }
   }
 }
