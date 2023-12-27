@@ -41,11 +41,11 @@ $page = $_GET['page'] ?? 1;
   <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub5.webp)">
     <div class="m-main">
       <header class="page-header">
-        <h2 class="header-tit">고객의 소리</h2>
+        <h2 class="header-tit">커뮤니티</h2>
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>
-        <li><span class="nav-item"><span class="txt">고객의 소리</span></span></li>
+        <li><span class="nav-item"><span class="txt">커뮤니티</span></span></li>
         <li>
           <div class="drop-box" data-selector="dropContainer" data-sid="moveLink">
             <a href="javascript:void(0)" class="nav-item ico" data-action="drop"><?=$_title?></a>

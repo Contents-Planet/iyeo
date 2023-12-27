@@ -54,7 +54,7 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
   <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub5.webp)">
     <div class="m-main">
       <header class="page-header">
-        <h2 class="header-tit"><?= $_title ?></h2>
+        <h2 class="header-tit">커뮤니티</h2>
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>

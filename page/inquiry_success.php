@@ -8,7 +8,7 @@ if($type === "startups") {
 else if($type === "customer") {
   $_title = "1:1 문의";
   $_active = "5";
-  $_depth1 = "고객의 소리";
+  $_depth1 = "커뮤니티";
 }
 else {
   echo '<script>alert("잘못된 접근입니다."); location.href = "/";</script>';
@@ -53,7 +53,7 @@ else {
         </li>
         <?php } ?>
         <?php if($type === "customer") { ?>
-          <li><span class="nav-item"><span class="txt">고객의 소리</span></span></li>
+          <li><span class="nav-item"><span class="txt">커뮤니티</span></span></li>
           <li>
             <div class="drop-box" data-selector="dropContainer" data-sid="moveLink">
               <a href="javascript:void(0)" class="nav-item ico" data-action="drop">1:1문의</a>
