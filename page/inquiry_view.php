@@ -58,7 +58,7 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>
-        <li><span class="nav-item"><span class="txt">고객의 소리</span></span></li>
+        <li><span class="nav-item"><span class="txt">커뮤니티</span></span></li>
         <li>
           <div class="drop-box" data-selector="dropContainer" data-sid="moveLink">
             <a href="javascript:void(0)" class="nav-item ico" data-action="drop"><?= $_title ?></a>
