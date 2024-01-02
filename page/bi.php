@@ -13,6 +13,7 @@
   <header id="header">
     <?php include_once $_SERVER["DOCUMENT_ROOT"]."/page/_inc/header.php"; ?>
     <input type="hidden" id="depth1" value="1"/>
+    <input type="hidden" id="depth2" value="2"/>
   </header>
 
   <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub1.webp)">

@@ -4,9 +4,11 @@ $type = $_GET['type'] ?? "notice";
 if($type === "startups") {
   $_title =  "창업 문의";
   $_active = "4";
+  $_active2 = "2";
 } else if($type === "customer") {
   $_title = "1:1 문의";
   $_active = "5";
+  $_active2 = "2";
 }
 ?>
 
@@ -26,6 +28,7 @@ if($type === "startups") {
   <header id="header">
     <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/page/_inc/header.php"; ?>
     <input type="hidden" id="depth1" value="<?=$_active?>"/>
+    <input type="hidden" id="depth2" value="<?=$_active2?>"/>
   </header>
   <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub<?=$_active?>.webp)">
     <div class="m-main">

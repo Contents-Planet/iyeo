@@ -117,6 +117,7 @@ var PageCommon = {
 var GNB = {
 	Reset: function () {
 		$("#header").removeClass('_open');
+		$("#header").removeClass('_openDepth');
 		$("#header").find("[data-selector=dropConteinr]").removeClass("_active");
 		ND.FN.noScroll('off');
 	},
@@ -135,10 +136,18 @@ var GNB = {
 	},
 
 	NowPage : function(){
-		var __depth1 = $("#depth1").val();
+		var __depth1 = $("#depth1").val(),
+			__depth2 = $("#depth2").val(),
+			$depth1 = $("[data-selector=depth1][data-sid="+ __depth1 +"]");
 
 		$("[data-selector=depth1]").removeClass("_active");
-		$("[data-selector=depth1][data-sid="+ __depth1 +"]").addClass("_active");
+		$("[data-selector=depth2]").removeClass("_active");
+		$depth1.addClass("_active");
+		$depth1.closest("li").find("[data-action=depth2][data-sid="+ __depth2 +"]").addClass("_active");
+	},
+
+	OpenDepth : function(){
+		$("#header").addClass("_openDepth");
 	},
 
 	Sticky: function () {
@@ -182,8 +191,12 @@ var GNB = {
 			}
 		})
 
-		$("[data-item=nav]").unbind("click").on("click", function(){
-			GNB.MovePage($(this));
+		$("#header").unbind("mouseenter").on("mouseenter", function(){
+			GNB.OpenDepth();
+		})
+
+		$("#header").unbind("mouseleave").on("mouseleave", function(){
+			GNB.Reset();
 		})
 
 		$(window).scroll(function(){
