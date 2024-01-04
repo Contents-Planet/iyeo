@@ -6,7 +6,7 @@ $page = $_GET['page'] ?? 1;
 <html lang="ko">
 
 <head>
-  <title>채용공고 | 이여 F&B</title>
+  <title>채용공고 | 이여 곰탕</title>
   <meta property="og:title" content="채용공고 | 이여 F&B"/>
   <meta property="og:url" content="https://iyeo.co.kr/page/startup"/>
 

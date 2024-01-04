@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <title>본사오시는길 | 브랜드소개 | 이여 F&B</title>
-  <meta property="og:title" content="본사오시는길 | 브랜드소개 | 이여 F&B" />
+  <title>본사오시는길 | 브랜드소개 | 이여 곰탕</title>
+  <meta property="og:title" content="본사오시는길 | 브랜드소개 | 이여 곰탕" />
   <meta property="og:url" content="https://iyeo.co.kr/page/about" />
 
   <?php include_once $_SERVER["DOCUMENT_ROOT"]."/page/_inc/head.php"; ?>

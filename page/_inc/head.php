@@ -7,9 +7,9 @@ error_reporting(0);
 <meta name="naver-site-verification" content="1ef1bd3bb9b556397b4c8cc954383b3a643504fb" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 <meta name="description" content="각종 매스컴과 인플루언서들이 극찬한 이여곰탕의 변치 않는 맛!서울 4대 한우곰탕 선정, 합리적인 원가율과 차별화된 노하우, 효율적 매장 운영으로 매출이 극대화됩니다." />
-<meta name="keywords" content="이여곰탕, 이여곰탕 프랜차이즈, 서울4대곰탕, 곰탕, 곰탕 프렌차이즈, 한우곰탕, 창업문의, 이여F&B" />
+<meta name="keywords" content="이여 곰탕, 이여곰탕, 이여곰탕 프랜차이즈, 서울4대곰탕, 곰탕, 곰탕 프렌차이즈, 한우곰탕, 창업문의, 이여F&B" />
 
-<meta property="og:site_name" content="이여 F&B" />
+<meta property="og:site_name" content="이여 곰탕" />
 <meta property="og:description" content="각종 매스컴과 인플루언서들이 극찬한 이여곰탕의 변치 않는 맛!서울 4대 한우곰탕 선정, 합리적인 원가율과 차별화된 노하우, 효율적 매장 운영으로 매출이 극대화됩니다." />
 <meta property="og:type" content="article" />
 
@@ -17,7 +17,7 @@ error_reporting(0);
 <meta property="og:image:height" content="315">
 <meta property="og:image" content="각종 매스컴과 인플루언서들이 극찬한 이여곰탕의 변치 않는 맛!서울 4대 한우곰탕 선정, 합리적인 원가율과 차별화된 노하우, 효율적 매장 운영으로 매출이 극대화됩니다." />
 
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.econtents.co.kr/_img/favicon_iyeo.png">
 
 <link rel="stylesheet" href="//static.econtents.co.kr/_asset/_font/fontawesome-free-5.7.2-web/css/all.css" type="text/css" />
 <link rel="stylesheet" href="//static.econtents.co.kr/_asset/_lib/swiper/swiper.min.css" type="text/css" />

@@ -20,7 +20,7 @@ else {
 <html lang="ko">
 
 <head>
-  <title><?= $_title ?> | 이여 F&B</title>
+  <title><?= $_title ?> | 이여 곰탕</title>
   <meta property="og:title" content="<?= $_title ?> | 이여 F&B"/>
   <meta property="og:url" content="https://iyeo.co.kr/page/startup"/>
 
