@@ -1,3 +1,8 @@
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 var geocoder = new kakao.maps.services.Geocoder();
 
 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
@@ -20,6 +25,34 @@ $(function(){
 })
 
 var PageCommon = {
+	/**
+	 * youtube interaction
+	 */
+	youtubePlay : function(container, sid, youtube) {
+		$("[data-selector="+ container +"]").find("[data-selector=videoFrame]").remove();
+		var $playWrap ='<div class="iframe" id="iframe-wrap'+ sid +'" data-selector="videoFrame"></div>';
+		$("[data-selector="+ container +"]").append($playWrap);
+
+		var player = new YT.Player('iframe-wrap'+ sid, {
+			height: '100%',
+			width: '100%',
+			videoId: youtube,
+			rel : 0, //0으로 해놓아야 재생 후 관련 영상이 안뜸
+			events: {
+				'onReady': function(event) {
+					event.target.playVideo();
+					event.target.mute();
+					event.target.setVolume(0);
+				},
+				'onStateChange': function(event) {
+					if(event.data === 0) {
+						event.target.playVideo();
+					}
+				}
+			}
+		})
+	},
+
 	moveTo: function (top) {
 		var moveTo = $("#sec-" + top).offset().top;
 		$("body, html").animate({scrollTop: moveTo}, '500');

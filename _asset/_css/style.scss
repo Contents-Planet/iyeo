@@ -857,6 +857,10 @@ section {
 
 /* .page-main */
 .page-main {
+  &#wrap {
+    padding-top:0;
+  }
+
   .dec-wrap {
     color: #fff;
     font-size: 22px;
@@ -949,12 +953,26 @@ section {
       color: #fff;
       text-align: center;
     }
+
     .kv-tit {
       color: #fff;
       font-family: 'Noto Serif KR', serif;
       display: block;
       font-size: 90px;
       line-height: 1.1;
+    }
+
+    .video-container {
+      height:100vh;
+
+      .iframe {
+        position:absolute;
+        left:50%;
+        top:50%;
+        min-height:100%;
+        min-width:100%;
+        transform:translate(-50%, -50%);
+      }
     }
   }
 

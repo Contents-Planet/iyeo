@@ -10,6 +10,10 @@ var Page = {
 		ND.SLIDE.Swiper("mainKv", option)
 	},
 
+	MainVideo : function(){
+
+	},
+
 	Bind : function(){
 
 	},
@@ -17,6 +21,7 @@ var Page = {
 	Init : function(){
 		Page.Bind();
 		Page.Slide();
+		//PageCommon.youtubePlay('kvVideo', '0', 'l8Nv29RJtKs')
 	}
 }
 
