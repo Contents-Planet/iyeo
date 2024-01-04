@@ -64,7 +64,7 @@ switch ($mode) {
       foreach ($datas as $data) {
         $results["datas"][$cnt]["seqs"] = $data['seq'];
         $results["datas"][$cnt]["inquiry_type"] = $data['inquiry_type'];
-        $results["datas"][$cnt]["name"]  = ($type === "notice" ? $data['name'] : preg_replace('/.(?=.$)/u', '*', $data['name']) );
+        $results["datas"][$cnt]["name"]  = ($type === "notice" ? $data['name'] : preg_replace('/.(?=.$)/u', '*', $data['name']));
         $results["datas"][$cnt]["title"] = $data['title'];
         $results["datas"][$cnt]["content"] = $data['content'];
         $results["datas"][$cnt]["reg_date"] = date("Y-m-d", strtotime($data['created_at']));
@@ -119,7 +119,7 @@ switch ($mode) {
 
       foreach ($datas as $data) {
         $results["datas"][$cnt]["seqs"] = $data['seq'];
-        $results["datas"][$cnt]["name"]  =$data['name'];
+        $results["datas"][$cnt]["name"]  = $data['name'];
         $results["datas"][$cnt]["sort"] = $data['sort'];
         $results["datas"][$cnt]["content"] = $data['content'];
         $results["datas"][$cnt]["reg_date"] = date("Y-m-d", strtotime($data['reg_date']));
@@ -149,7 +149,7 @@ switch ($mode) {
 
       $data = $iyeoService->inquiryDetail($seq);
       // $preNextSeqs = $iyeoService->getNextPreSeqs($seq);
-     
+
       $results["datas"] = [
         "seq" => $data['seq'],
         "inquiry_type" => $data['inquiry_type'],
@@ -169,7 +169,35 @@ switch ($mode) {
 
       $results["result"] = 200;
 
-      
+
+
+      echo json_encode($results);
+    } catch (Exception $e) {
+
+      echo json_encode([
+        "result" => 400,
+        "message" => $e->getMessage()
+      ]);
+    }
+
+    break;
+  case "getMenus":
+    try {
+      $iyeoService = new IyeoService();
+
+      $datas = $iyeoService->getMenus();
+      $cnt = 0;
+
+      foreach ($datas as $data) {
+        $results["datas"][$cnt]["img"] = $data['img'];
+        $content = str_replace('<span style="color:rgb(31,31,31);">', '', $data['content']);
+        $content = str_replace('</span>', '', $content);
+        $results["datas"][$cnt]["tit"] = $data['name'];
+        $results["datas"][$cnt]["dec"] = $content;
+        $cnt++;
+      }
+
+      $results["result"] = 200;
 
       echo json_encode($results);
     } catch (Exception $e) {
