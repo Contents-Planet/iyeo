@@ -99,5 +99,10 @@
   </footer>
 </div>
 <script src="/_asset/_js/page.main.js"></script>
+<script>
+  $(function(){
+    PageCommon.youtubePlay('kvVideo', '0', 'l8Nv29RJtKs')
+  })
+</script>
 </body>
 </html>
