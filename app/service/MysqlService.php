@@ -5,7 +5,7 @@ namespace app\service;
 class MysqlService
 {
     private $database = '';
-    private $host = 'planworks.cvjejucpf1xq.ap-northeast-2.rds.amazonaws.com';
+    private $host = 'planworks2024.cvjejucpf1xq.ap-northeast-2.rds.amazonaws.com';
     private $userid = 'root';
     private $password = 'plan!db6200**';
     protected $db;
