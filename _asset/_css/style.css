@@ -1407,13 +1407,18 @@ section.sec {
   padding: 0;
 }
 .page-startup .sec1 {
-  background: #322b29;
-  padding-bottom: 65px;
+  background: #e7e6dd;
+  padding: 0 !important;
 }
 .page-startup .sec1 .sec-header {
   padding: 140px 0 40px;
   text-align: center;
   color: #e7e6dd;
+}
+.page-startup .sec1-2 {
+  background: url(https://static.econtents.co.kr/_img/iyeo/startup_sec2_bg_v2.webp) center top no-repeat;
+  background-size: auto 100%;
+  padding: 0 !important;
 }
 .page-startup .sec2 {
   background: #e7e6dd;

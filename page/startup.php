@@ -40,16 +40,32 @@
     <div id="contents">
       <section class="sec sec1">
         <div class="m-main">
-          <header class="sec-header">
-            <h3 class="header-tit">이여곰탕만의 성공 경쟁력</h3>
-          </header>
           <figure class="fig-item">
-            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec1_img.webp" alt="" />
+            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec1_img_v2.webp" alt="" />
             <figcaption class="a11y">
+              이여곰탕은 다릅니다
+              이여곰탕만의 성공 경쟁력
               2023년 평균 일매출
               용산점 - 700만원 이상
               역삼점 - 340만원 이상
               종로점 - 300만원 이상
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="sec sec1-2">
+        <div class="m-main">
+          <figure class="fig-item">
+            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec2_img_v2.webp" alt="" />
+            <figcaption class="a11y">
+              한식 프랜차이즈 매출 순위 9위!
+              순위 / 상호 / 브랜드 / 가맹사업 개시일 / 가맹점 수 :
+              1 (주)맛찬들 / 맛찬들 왕소금구이 / 2013. 04. / 80개 이상
+              2 (주)고릴라F&D / 진대감 / 2013. 12. / 20개 이상
+              9 (주)이여 / 이여곰탕 / 2018. 12. / 10개 이상
+              14 (주)델리앤 / 순흥골 / 2009. 07. / 10개 미만
+              15 (주)첨성대 / 옛날농장 / 2001. 01. / 10개 이상
             </figcaption>
           </figure>
         </div>
@@ -87,7 +103,7 @@
             </li>
             <li>
               <div class="box">
-                <strong class="tit t1">효율적 매장 운영</strong>
+                <strong class="tit t4">효율적 매장 운영</strong>
                 <p class="dec">
                   간편한 조리 시스템으로 인건비 절감 효과! <br />
                   높은 회전율로 매출이 극대화됩니다.
@@ -98,10 +114,10 @@
         </div>
       </section>
 
-      <section class="sec sec3" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/startup_sec3_bg.webp)">
+      <section class="sec sec3" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/startup_sec3_bg_v2.webp)">
         <div class="m-main">
           <figure class="fig-item">
-            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec3_img.webp" alt="" />
+            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec3_v2.webp" alt="" />
             <figcaption class="a11y">
               매스컴이 주목하는 이여곰탕
               월간식당

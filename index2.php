@@ -19,7 +19,9 @@
     <div class="swiper slide-container" data-selector="mainKv">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="video-container" data-selector="kvVideo"></div>
+          <div class="video-container" data-selector="kvVideo">
+            <iframe class="iframe" id="iframe-wrap" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="YouTube video player" width="100%" height="auto" src="https://www.youtube.com/embed/l8Nv29RJtKs?autoplay=1&origin=https://iyeo.co.kr&widgetid=1&mute=1&loop=1"></iframe>
+          </div>
         </div>
 
         <!--<div class="swiper-slide">
@@ -99,10 +101,5 @@
   </footer>
 </div>
 <script src="/_asset/_js/page.main.js"></script>
-<script>
-  $(function(){
-    PageCommon.youtubePlay('kvVideo', '0', 'l8Nv29RJtKs')
-  })
-</script>
 </body>
 </html>

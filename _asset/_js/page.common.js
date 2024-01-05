@@ -1,5 +1,5 @@
 var tag = document.createElement('script');
-tag.src = "//www.youtube.com/iframe_api";
+tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -51,6 +51,14 @@ var PageCommon = {
 				}
 			}
 		})
+	},
+
+	Video : function(e) {
+		var seq = e.data("seq"),
+			youtube = e.data("id"),
+			container = e.data("container");
+
+		PageCommon.youtubePlay(container, seq, youtube);
 	},
 
 	moveTo: function (top) {
@@ -136,7 +144,11 @@ var PageCommon = {
 	},
 
 	Bind : function(){
-
+		$("[data-action=video]").unbind("click");
+		$(document).on("click", "[data-action=video]", function(){
+			console.log("Ddd");
+			PageCommon.Video($(this));
+		})
 	},
 
 	Init : function(){
