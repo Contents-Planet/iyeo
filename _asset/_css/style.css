@@ -1248,6 +1248,7 @@ section.sec {
   height: 500px;
   position: relative;
   margin-top: 40px;
+  display: block;
 }
 .page-location .info-flex {
   margin-top: 40px;
