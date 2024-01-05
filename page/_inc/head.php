@@ -24,6 +24,7 @@ error_reporting(0);
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="//static.econtents.co.kr/_asset/_lib/WOW-master/css/libs/animate.css" type="text/css">
 <link rel="stylesheet" href="../_asset/_css/common.min.css" type="text/css" />
 <link rel="stylesheet" href="../_asset/_css/style.min.css" type="text/css" />
 
@@ -33,6 +34,7 @@ error_reporting(0);
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f0c68c10e020ce75b6152681ce210706&libraries=services,clusterer,drawing"></script>
 
+<script src="//static.econtents.co.kr/_asset/_lib/WOW-master/dist/wow.min.js"></script>
 <script src="/_asset/_js/ND.function.js?v=20220701"></script>
 <script src="/_asset/_js/page.common.js"></script>
 

@@ -70,18 +70,18 @@ else {
   </section>
   <div id="container">
     <div id="contents">
-      <section class="sec">
+      <section class="sec _motionSec">
         <div class="m-main">
           <article class="article a2">
             <header class="sec-header success-header">
-              <h3 class="header-tit"><?= $_title ?>가<br />정상적으로 접수되었습니다.</h3>
-              <p class="dec">
+              <h3 class="header-tit wow fadeInDown" data-wow-delay="0.4s"><?= $_title ?>가<br />정상적으로 접수되었습니다.</h3>
+              <p class="dec wow fadeInUp" data-wow-delay="0.6s">
                 빠른 시일내에 답변드리도록 하겠습니다. <br />
                 감사합니다.
               </p>
-              <strong class="tit">고객센터: 1551-2508</strong>
+              <strong class="tit wow fadeInUp" data-wow-delay="0.8s">고객센터: 1551-2508</strong>
             </header>
-            <div class="btn-wrap">
+            <div class="btn-wrap wow fadeInUp" data-wow-delay="1.0s">
               <?php if($type === "startups") { ?>
                 <a href="/" class="btn c-brown s2">홈으로</a>
               <?php } else { ?>

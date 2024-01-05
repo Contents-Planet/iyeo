@@ -27,6 +27,8 @@ $page = $_GET['page'] ?? 1;
   <meta property="og:url" content="https://iyeo.co.kr/page/startup"/>
 
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/page/_inc/head.php"; ?>
+
+  
 </head>
 
 <body>
@@ -41,7 +43,7 @@ $page = $_GET['page'] ?? 1;
   <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub5.webp)">
     <div class="m-main">
       <header class="page-header">
-        <h2 class="header-tit _motion _motionToTop _delay1">커뮤니티</h2>
+        <h2 class="header-tit _motion _motionToBottom _delay1">커뮤니티</h2>
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>
@@ -63,11 +65,11 @@ $page = $_GET['page'] ?? 1;
   <div id="container">
     <div id="contents">
       <input type='hidden' id='inquiry_page' name='inquiry_page' value="<?= $page ?>">
-      <section class="sec">
+      <section class="sec _motionSec">
         <div class="m-main">
           <article class="article">
             <header class="sec-header">
-              <h3 class="small-tit"><?= $_title ?></h3>
+              <h3 class="small-tit wow fadeInDown" data-wow-delay="0.4s"><?= $_title ?></h3>
             </header>
 
             <ul class="bbs-list" data-selector="listAppend"></ul>

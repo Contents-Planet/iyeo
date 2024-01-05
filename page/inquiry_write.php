@@ -5,10 +5,13 @@ if($type === "startups") {
   $_title =  "창업 문의";
   $_active = "4";
   $_active2 = "2";
+  $_kvTit = "창업 안내";
 } else if($type === "customer") {
   $_title = "1:1 문의";
   $_active = "5";
   $_active2 = "2";
+} else {
+  $_kvTit = "커뮤니티";
 }
 ?>
 
@@ -33,7 +36,7 @@ if($type === "startups") {
   <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub<?=$_active?>.webp)">
     <div class="m-main">
       <header class="page-header">
-        <h2 class="header-tit _motion _motionToTop _delay1">커뮤니티</h2>
+        <h2 class="header-tit _motion _motionToBottom _delay1"><?=$_kvTit?></h2>
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>

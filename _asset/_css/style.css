@@ -1594,6 +1594,7 @@ section.sec {
 textarea {
   border: 2px solid #ccc;
   height: 50px;
+  width: 100%;
 }
 
 textarea {
