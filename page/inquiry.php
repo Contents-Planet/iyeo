@@ -69,7 +69,7 @@ $page = $_GET['page'] ?? 1;
         <div class="m-main">
           <article class="article">
             <header class="sec-header">
-              <h3 class="small-tit _motion _motionToBottom _delay"><?= $_title ?></h3>
+              <h3 class="small-tit wow fadeInDown" data-wow-delay="0.4s"><?= $_title ?></h3>
             </header>
 
             <ul class="bbs-list" data-selector="listAppend"></ul>
