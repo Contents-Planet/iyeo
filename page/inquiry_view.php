@@ -42,7 +42,6 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
 
 <!doctype html>
 <html lang="ko">
-
 <head>
   <title><?= $data['title'] ?> | 이여 곰탕</title>
   <meta property="og:title" content="<?= $data['title'] ?> | 이여 F&B"/>
