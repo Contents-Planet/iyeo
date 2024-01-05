@@ -111,6 +111,7 @@ body.noscroll {
   padding: 0 15px;
 }
 #header .gnb-container .m-main {
+  position: relative;
   justify-content: center;
   padding: 25px 150px;
   padding-left: 200px;
@@ -236,21 +237,9 @@ body.noscroll {
   background-size: cover;
 }
 
-@media screen and (max-width: 1200px) {
-  #logo {
-    width: 200px;
-  }
-  #header .gnb-container .m-main {
-    padding-left: 240px;
-    position: relative;
-  }
-}
 @media screen and (max-width: 1024px) {
   #wrap {
     padding-top: 75px;
-  }
-  #logo {
-    width: 160px;
   }
   #header .gnb-container .m-main {
     padding: 15px 100px;
