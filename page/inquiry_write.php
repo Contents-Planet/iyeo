@@ -30,7 +30,7 @@ if($type === "startups") {
     <input type="hidden" id="depth1" value="<?=$_active?>"/>
     <input type="hidden" id="depth2" value="<?=$_active2?>"/>
   </header>
-  <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub<?=$_active?>.webp)">
+  <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub<?=$_active?>.webp)">
     <div class="m-main">
       <header class="page-header">
         <h2 class="header-tit">커뮤니티</h2>

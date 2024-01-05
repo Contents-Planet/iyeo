@@ -16,11 +16,11 @@
     <input type="hidden" id="depth2" value="3"/>
   </header>
 
-  <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub1.webp)">
+  <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub1.webp)">
     <div class="m-main">
       <header class="page-header">
-        <p class="header-dec">K푸드를 선도하는</p>
-        <strong class="header-tit">이여곰탕</strong>
+        <p class="header-dec _motion _motionToBottom">K푸드를 선도하는</p>
+        <strong class="header-tit _motion _motionToTop _delay1">이여곰탕</strong>
         <h2 class="a11y">브랜드소개</h2>
         <h3 class="a11y">본사오시는길</h3>
       </header>

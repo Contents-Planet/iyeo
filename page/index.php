@@ -10,7 +10,7 @@
     <input type="hidden" id="page" value="main"/>
   </header>
 
-  <section class="sec sec-kv">
+  <section class="sec sec-kv _motionSec">
     <div class="scroll-dot btt-dot" data-selector="bttDot"></div>
     <div class="swiper slide-container" data-selector="mainKv">
       <div class="swiper-wrapper">

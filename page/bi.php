@@ -16,7 +16,7 @@
     <input type="hidden" id="depth2" value="2"/>
   </header>
 
-  <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub1.webp)">
+  <section class="sec sec-kv _motionSec _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub1.webp)">
     <div class="m-main">
       <header class="page-header">
         <p class="header-dec _motion _motionToBottom">K푸드를 선도하는</p>

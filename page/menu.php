@@ -15,7 +15,7 @@
     <input type="hidden" id="depth1" value="2"/>
   </header>
 
-  <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub2.webp)">
+  <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub2.webp)">
     <div class="m-main">
       <header class="page-header">
         <h2 class="header-tit">메뉴 소개</h2>

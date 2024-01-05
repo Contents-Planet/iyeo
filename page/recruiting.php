@@ -22,7 +22,7 @@ $page = $_GET['page'] ?? 1;
     <input type="hidden" id="depth2" value="4"/>
   </header>
 
-  <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub5.webp)">
+  <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub5.webp)">
     <div class="m-main">
       <header class="page-header">
         <h2 class="header-tit">커뮤니티</h2>
