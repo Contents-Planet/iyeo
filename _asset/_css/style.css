@@ -113,7 +113,7 @@ body.noscroll {
 #header .gnb-container .m-main {
   justify-content: center;
   padding: 25px 150px;
-  padding-left: 280px;
+  padding-left: 200px;
   position: relative;
 }
 #header .col-nav {
@@ -225,7 +225,7 @@ body.noscroll {
 }
 
 #logo {
-  width: 215px;
+  width: 150px;
   left: 0;
   z-index: 1;
 }
