@@ -69,8 +69,8 @@ if($type === "startups") {
     <div id="contents">
       <section class="sec">
         <div class="m-main">
-          <article class="article a2">
-            <header class="sec-header">
+          <article class="article a2 _motionSec">
+            <header class="sec-header _motion _motionToBottom _delay1-5">
               <h3 class="small-tit"><?= $_title ?></h3>
               <span class="req-dec"><span class="t-red">*</span> 는 필수입력항목입니다.</span>
             </header>
@@ -78,7 +78,7 @@ if($type === "startups") {
               <input type='hidden' value='write' name='mode'>
               <input type='hidden' value='<?= $type ?>' name='type'>
 
-              <dl class="chk-dl drop-box" data-selector="dropContainer">
+              <dl class="chk-dl drop-box _motion _motionToTop _delay2" data-selector="dropContainer">
                 <dt>
                   <label href="javascript:void(0)" class="chk-label drop-chk" data-action="allChk" for="privacy">
                     <input type="checkbox" name="privacy" id="privacy" value="Y" placeholder="개인정보취급방침을 동의하셔야 서비스를 이용하실 수 있습니다." data-validate="req" />
@@ -93,20 +93,20 @@ if($type === "startups") {
               </dl>
 
               <div class="inquiry-container">
-                <dl class="inner-dl">
+                <dl class="inner-dl _motion _motionToTop _delay2-5">
                   <dt><label class="label req" for="name">성명</label></dt>
                   <dd>
                     <input type="text" name="name" id="name" placeholder="성명을 입력해주세요." data-validate="req"/>
                   </dd>
                 </dl>
-                <dl class="inner-dl">
+                <dl class="inner-dl _motion _motionToTop _delay3">
                   <dt><label class="label req" for="phone">연락처</label></dt>
                   <dd>
                     <input type="text" name="phone" id="phone" placeholder="연락처를 입력해주세요." data-validate="req"/>
                   </dd>
                 </dl>
                 <?php if ($type == 'startups') { ?>
-                  <dl class="inner-dl">
+                  <dl class="inner-dl _motion _motionToTop _delay3-5">
                     <dt><span class="label req">희망지역</span></dt>
                     <dd>
                       <ul class="area-flex flex">
@@ -122,21 +122,21 @@ if($type === "startups") {
                   </dl>
                 <?php } ?>
                 <?php if ($type === "customer") { ?>
-                  <dl class="inner-dl">
+                  <dl class="inner-dl _motion _motionToTop _delay4">
                     <dt><label class="label req" for="title">문의 제목</label></dt>
                     <dd>
                       <input type="text" placeholder="문의제목을 입력해주세요." name="title" id="title" data-validate="req"/>
                     </dd>
                   </dl>
                 <?php } ?>
-                <dl class="inner-dl">
+                <dl class="inner-dl _motion _motionToTop _delay4-5">
                   <dt><label class="label req" for="content">문의 내용</label></dt>
                   <dd>
                     <textarea placeholder="문의내용을 입력해주세요." name="content" id="content" data-validate="req"></textarea>
                   </dd>
                 </dl>
                 <?php if ($type === "customer") { ?>
-                <dl class="inner-dl">
+                <dl class="inner-dl _motion _motionToTop _delay5">
                   <dt><label class="label req" for="pw">문의 비밀번호</label></dt>
                   <dd>
                     <input type="password" placeholder="1:1문의 비밀번호를 입력해주세요." name="pw" id="pw" data-validate="req"/>
@@ -145,7 +145,7 @@ if($type === "startups") {
                 <?php } ?>
               </div>
 
-              <div class="btn-wrap">
+              <div class="btn-wrap _motion _motionToTop _delay5-5">
                 <a href="javascript:void(0)" class="btn c-brown s2" data-action="submit">문의하기</a>
               </div>
             </form>
