@@ -19,7 +19,7 @@
   <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub4.webp)">
     <div class="m-main">
       <header class="page-header">
-        <h2 class="header-tit">창업 안내</h2>
+        <h2 class="header-tit _motion _motionToTop _delay1">창업 안내</h2>
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>

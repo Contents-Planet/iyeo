@@ -294,7 +294,6 @@ var MotionSec = {
 			$btt = $(".motion-line.btt");
 
 		if($top.index() > -1 && $btt.index() > -1) {
-			console.log("Ddd")
 			var top = $top.offset().top,
 				btt = $btt.offset().top;
 
