@@ -57,7 +57,7 @@ error_reporting(0);
                 <a href="/page/inquiry?type=customer" class="depth-item" data-action="depth2" data-sid="2">1:1문의</a>
               </li>
               <li>
-                <a href="/page/inquiry?type=news" class="depth-item" data-action="depth2" data-sid="3">보도자료</a>
+                <a href="/page/inquiry?type=news"  class="depth-item" data-action="depth2" data-sid="3">보도자료</a>
               </li>
               <li>
                 <a href="/page/recruiting" class="depth-item" data-action="depth2" data-sid="4">채용공고</a>
@@ -73,4 +73,10 @@ error_reporting(0);
       <span class="bar"><span class="a11y">전체메뉴</span></span>
     </a>
   </div>
+</div>
+
+<div class="t-right">
+  <a href="https://www.msn.com/ko-kr/news/other/%EA%B3%B0%ED%83%95%EC%97%90%EB%8F%84-%EB%AA%85%ED%92%88%EC%9D%B4-%EC%9E%88%EB%8B%A4-%EC%88%A8%EC%9D%80-%EA%B3%A0%EC%88%98%EA%B0%80-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%AA%85%ED%92%88-%EA%B3%B0%ED%83%95%EC%A7%91-5/ar-AA1lMEza?ocid=entnewsntp&pc=U531&cvid=23a885173323471aa85d62114c8fbc0f&ei=16" target="_blank" class="link">
+    [출처 : msn.com 문현정 에디터별 스토리 | 2023.12.20 | https://www.msn.com]
+  </a>
 </div>

@@ -613,7 +613,12 @@ section {
 
 .t-right {
   text-align: right;
+
+  a.link {
+    color:blue;
+  }
 }
+
 
 .under {
   position: relative;
@@ -2005,6 +2010,7 @@ textarea {
   height:50px;
   width:100%;
 }
+
 
 textarea {
   height:150px;
