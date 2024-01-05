@@ -1,3 +1,8 @@
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 var geocoder = new kakao.maps.services.Geocoder();
 
 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
@@ -17,9 +22,46 @@ var clickedOverlay = null;
 $(function(){
 	PageCommon.Init();
 	GNB.Init();
+	MotionSec.Init();
 })
 
 var PageCommon = {
+	/**
+	 * youtube interaction
+	 */
+	youtubePlay : function(container, sid, youtube) {
+		$("[data-selector="+ container +"]").find("[data-selector=videoFrame]").remove();
+		var $playWrap ='<div class="iframe" id="iframe-wrap'+ sid +'" data-selector="videoFrame"></div>';
+		$("[data-selector="+ container +"]").append($playWrap);
+
+		var player = new YT.Player('iframe-wrap'+ sid, {
+			height: '100%',
+			width: '100%',
+			videoId: youtube,
+			rel : 0, //0으로 해놓아야 재생 후 관련 영상이 안뜸
+			events: {
+				'onReady': function(event) {
+					event.target.playVideo();
+					event.target.mute();
+					event.target.setVolume(0);
+				},
+				'onStateChange': function(event) {
+					if(event.data === 0) {
+						event.target.playVideo();
+					}
+				}
+			}
+		})
+	},
+
+	Video : function(e) {
+		var seq = e.data("seq"),
+			youtube = e.data("id"),
+			container = e.data("container");
+
+		PageCommon.youtubePlay(container, seq, youtube);
+	},
+
 	moveTo: function (top) {
 		var moveTo = $("#sec-" + top).offset().top;
 		$("body, html").animate({scrollTop: moveTo}, '500');
@@ -103,7 +145,11 @@ var PageCommon = {
 	},
 
 	Bind : function(){
-
+		$("[data-action=video]").unbind("click");
+		$(document).on("click", "[data-action=video]", function(){
+			console.log("Ddd");
+			PageCommon.Video($(this));
+		})
 	},
 
 	Init : function(){
@@ -242,3 +288,41 @@ var Map = {
 	}
 }
 
+var MotionSec = {
+	Active : function(){
+		var $top = $(".motion-line.top"),
+			$btt = $(".motion-line.btt");
+
+		if($top.index() > -1 && $btt.index() > -1) {
+			var top = $top.offset().top,
+				btt = $btt.offset().top;
+
+			//console.log(top, btt)
+			$.each($("._motionSec"), function(index, row){
+				var rowTop = $(row).offset().top,
+					rowHeight = $(row).outerHeight(),
+					rowBtt = parseInt(rowTop) + parseInt(rowHeight);
+
+				/*console.log(rowTop, rowBtt, "top : "+ top, "btt : "+ btt)
+				console.log(top +" <= "+ rowTop +" && "+ btt +" >= "+ rowTop)*/
+
+				if(!$(row).hasClass("_motionActive")) {
+					if((top >= rowTop && top <= rowBtt) || (btt >= rowTop && btt <= rowBtt)) {
+						$(row).addClass("_motionActive")
+					}
+				}
+			})
+		}
+	},
+
+	Bind : function(){
+		$(window).scroll(function(){
+			MotionSec.Active();
+		})
+	},
+
+	Init : function(){
+		MotionSec.Bind();
+		MotionSec.Active();
+	}
+}

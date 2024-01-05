@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <title>본사오시는길 | 브랜드소개 | 이여 F&B</title>
-  <meta property="og:title" content="본사오시는길 | 브랜드소개 | 이여 F&B" />
+  <title>본사오시는길 | 브랜드소개 | 이여 곰탕</title>
+  <meta property="og:title" content="본사오시는길 | 브랜드소개 | 이여 곰탕" />
   <meta property="og:url" content="https://iyeo.co.kr/page/about" />
 
   <?php include_once $_SERVER["DOCUMENT_ROOT"]."/page/_inc/head.php"; ?>
@@ -16,11 +16,11 @@
     <input type="hidden" id="depth2" value="3"/>
   </header>
 
-  <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub1.webp)">
+  <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub1.webp)">
     <div class="m-main">
       <header class="page-header">
-        <p class="header-dec">K푸드를 선도하는</p>
-        <strong class="header-tit">이여곰탕</strong>
+        <p class="header-dec _motion _motionToBottom">K푸드를 선도하는</p>
+        <strong class="header-tit _motion _motionToTop _delay1">이여곰탕</strong>
         <h2 class="a11y">브랜드소개</h2>
         <h3 class="a11y">본사오시는길</h3>
       </header>
@@ -42,26 +42,26 @@
   </section>
   <div id="container">
     <div id="contents">
-      <section class="sec">
+      <section class="sec _motionSec">
         <div class="m-main">
           <header class="sec-header">
-            <h2 class="header-tit">
+            <h2 class="header-tit _motion _motionToBottom _delay1-5">
               건강한 맛, 정직한 고집 <br />
               이여F&B입니다.
             </h2>
           </header>
-          <div class="map-container" data-selector="mapContainer">
+          <div class="map-container _motion _motionToTop _delay2" data-selector="mapContainer">
             <div id="map"></div>
           </div>
 
           <dl class="info-flex flex">
-            <dt>이여F&B 본사</dt>
+            <dt class="_motion _motionToRight _delay1-5">이여F&B 본사</dt>
             <dd>
-              <dl class="dl-item">
+              <dl class="dl-item _motion _motionToLeft _delay2">
                 <dt>주소</dt>
                 <dd>서울 강남구 봉은사로63길 23 4F</dd>
               </dl>
-              <dl class="dl-item">
+              <dl class="dl-item _motion _motionToLeft _delay3">
                 <dt>전화</dt>
                 <dd><a href="tel:0234432508" class="tel">02-3443-2508</a></dd>
               </dl>

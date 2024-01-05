@@ -20,7 +20,7 @@ else {
 <html lang="ko">
 
 <head>
-  <title><?= $_title ?> | 이여 F&B</title>
+  <title><?= $_title ?> | 이여 곰탕</title>
   <meta property="og:title" content="<?= $_title ?> | 이여 F&B"/>
   <meta property="og:url" content="https://iyeo.co.kr/page/startup"/>
 
@@ -33,10 +33,10 @@ else {
     <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/page/_inc/header.php"; ?>
     <input type="hidden" id="depth1" value="4"/>
   </header>
-  <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub4.webp)">
+  <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub4.webp)">
     <div class="m-main">
       <header class="page-header">
-        <h2 class="header-tit"><?= $_depth1 ?></h2>
+        <h2 class="header-tit _motion _motionToTop _delay1"><?= $_depth1 ?></h2>
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>

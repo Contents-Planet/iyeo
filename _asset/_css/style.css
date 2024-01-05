@@ -111,9 +111,10 @@ body.noscroll {
   padding: 0 15px;
 }
 #header .gnb-container .m-main {
+  position: relative;
   justify-content: center;
   padding: 25px 150px;
-  padding-left: 280px;
+  padding-left: 200px;
   position: relative;
 }
 #header .col-nav {
@@ -225,32 +226,20 @@ body.noscroll {
 }
 
 #logo {
-  width: 200px;
+  width: 150px;
   left: 0;
   z-index: 1;
 }
 #logo .logo-item {
   display: block;
-  padding-top: 27.94%;
-  background: url(https://static.econtents.co.kr/_img/iyeo/logo.webp) center no-repeat;
+  padding-top: 23.39%;
+  background: url(https://static.econtents.co.kr/_img/iyeo/logo_iyeo.webp) center no-repeat;
   background-size: cover;
 }
 
-@media screen and (max-width: 1200px) {
-  #logo {
-    width: 200px;
-  }
-  #header .gnb-container .m-main {
-    padding-left: 240px;
-    position: relative;
-  }
-}
 @media screen and (max-width: 1024px) {
   #wrap {
     padding-top: 75px;
-  }
-  #logo {
-    width: 160px;
   }
   #header .gnb-container .m-main {
     padding: 15px 100px;
@@ -319,14 +308,14 @@ body.noscroll {
   margin-bottom: 15px;
 }
 #footer .col-logo {
-  max-width: 180px;
+  max-width: 200px;
   width: 100%;
 }
 #footer .foot-logo {
   display: inline-block;
   width: 100%;
-  padding-top: 16.11%;
-  background: url(https://static.econtents.co.kr/_img/iyeo/logo_foot.webp) center no-repeat;
+  padding-top: 23.5%;
+  background: url(https://static.econtents.co.kr/_img/iyeo/logo_iyeo_foot.webp) center no-repeat;
   background-size: cover;
 }
 #footer .footer-btt {
@@ -639,10 +628,12 @@ section.sec {
 
 .header-tit {
   font-size: 46px;
+  display: inline-block;
   font-family: "Noto Serif KR", serif;
 }
 
 .small-tit {
+  display: inline-block;
   font-size: 32px;
   font-family: "Noto Serif KR", serif;
 }
@@ -722,6 +713,9 @@ section.sec {
   }
 }
 /* .page-main */
+.page-main#wrap {
+  padding-top: 0;
+}
 .page-main .dec-wrap {
   color: #fff;
   font-size: 22px;
@@ -808,6 +802,17 @@ section.sec {
   display: block;
   font-size: 90px;
   line-height: 1.1;
+}
+.page-main .sec-kv .video-container {
+  height: 100vh;
+}
+.page-main .sec-kv .video-container .iframe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
 }
 .page-main .sec1 {
   background: #e6e6de;
@@ -1243,6 +1248,7 @@ section.sec {
   height: 500px;
   position: relative;
   margin-top: 40px;
+  display: block;
 }
 .page-location .info-flex {
   margin-top: 40px;
@@ -1393,13 +1399,18 @@ section.sec {
   padding: 0;
 }
 .page-startup .sec1 {
-  background: #322b29;
-  padding-bottom: 65px;
+  background: #e7e6dd;
+  padding: 0 !important;
 }
 .page-startup .sec1 .sec-header {
   padding: 140px 0 40px;
   text-align: center;
   color: #e7e6dd;
+}
+.page-startup .sec1-2 {
+  background: url(https://static.econtents.co.kr/_img/iyeo/startup_sec2_bg_v2.webp) center top no-repeat;
+  background-size: auto 100%;
+  padding: 0 !important;
 }
 .page-startup .sec2 {
   background: #e7e6dd;
@@ -1581,13 +1592,8 @@ section.sec {
 [type=text],
 [type=password],
 textarea {
-  padding: 0 10px;
   border: 2px solid #ccc;
-  width: 100%;
   height: 50px;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: "pretendard", "Apple SD Gothic Neo", Sans-serif;
 }
 
 textarea {

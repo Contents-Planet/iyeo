@@ -5,6 +5,11 @@ error_reporting(0);
 <ul id="skipNavi">
   <li><a href="#container" >본문바로가기</a></li>
 </ul>
+
+<div class="scroll_dot _fix" data-selector="headerDot"></div>
+<div class="motion-line top"></div>
+<div class="motion-line btt"></div>
+
 <div class="gnb-container">
   <div class="m-main flex">
     <h1 id="logo"><a href="/" class="logo-item"><span class="a11y">이여F&B</span></a></h1>

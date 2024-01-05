@@ -181,7 +181,8 @@ switch ($mode) {
     }
 
     break;
-  case "getMenus":
+
+    case "getMenus":
     try {
       $iyeoService = new IyeoService();
 
@@ -194,6 +195,7 @@ switch ($mode) {
         $content = str_replace('</span>', '', $content);
         $results["datas"][$cnt]["tit"] = $data['name'];
         $results["datas"][$cnt]["dec"] = $content;
+        $results["datas"][$cnt]["sort"] = $data['sort'];
         $cnt++;
       }
 

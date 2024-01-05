@@ -171,8 +171,8 @@ a:focus, a:hover,
 button:focus, button:hover,
 area:focus, area:hover { /*outline: #008aa2 solid 1px;outline-offset: -1px;*/ }
 
-input[type=text]:focus,
-input[type=text]:hover,
+[type=text]:focus,
+[type=text]:hover,
 input[type=password]:focus,
 input[type=password]:hover,
 select:focus,
@@ -723,7 +723,7 @@ textarea {
   font-size: 19px;
 }
 
-input[type=text] {
+[type=text] {
   height: 38px;
   border: 1px solid #cecece;
   padding: 0 10px;
@@ -732,7 +732,7 @@ input[type=text] {
   font-size: 16px;
   font-weight: 500;
 }
-input[type=text]:read-only {
+[type=text]:read-only {
   background: #f8f8f8;
   color: rgba(0, 0, 0, 0.2);
 }
@@ -892,6 +892,7 @@ input[type=text]:read-only {
 #sticky-line,
 .scroll-dot {
   position: fixed;
+  width: 100%;
   left: 0;
   right: 0;
   height: 0;

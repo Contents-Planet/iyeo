@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="ko">
 <head>
+  <title>이여 곰탕</title>
+  <meta property="og:title" content="이여 곰탕" />
+  <meta property="og:url" content="https://iyeo.co.kr/" />
+
   <?php include_once $_SERVER["DOCUMENT_ROOT"]."/page/_inc/head.php"; ?>
 </head>
 <body>
@@ -10,11 +14,17 @@
     <input type="hidden" id="page" value="main"/>
   </header>
 
-  <section class="sec sec-kv _motionSec">
+  <section class="sec sec-kv">
     <div class="scroll-dot btt-dot" data-selector="bttDot"></div>
     <div class="swiper slide-container" data-selector="mainKv">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
+          <div class="video-container" data-selector="kvVideo">
+            <iframe class="iframe" id="iframe-wrap" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="YouTube video player" width="100%" height="auto" src="https://www.youtube.com/embed/l8Nv29RJtKs?autoplay=1&origin=https://iyeo.co.kr&widgetid=1&mute=1&loop=1"></iframe>
+          </div>
+        </div>
+
+        <!--<div class="swiper-slide">
           <div class="img-box" style="background-image:url(../_img/main_1.jpg)">
             <div class="m-main">
               <dl class="dec-wrap">
@@ -26,13 +36,13 @@
               </dl>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </section>
   <div id="container">
     <div id="contents">
-      <section class="sec sec1" style="background-image:url(../_img/main_2.jpg)">
+      <section class="sec sec1">
         <div class="m-main">
           <div class="col-flex flex">
             <div class="col-left">
@@ -50,14 +60,21 @@
                 </dd>
               </dl>
             </div>
-            <div class="col-right"></div>
+            <div class="col-right pc-hide">
+              <div class="img-box" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/main_sec1_img1.webp)"></div>
+            </div>
           </div>
         </div>
       </section>
-      <section class="sec sec2" style="background-image:url(../_img/main_3.jpg)">
+
+      <section class="sec sec2" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/main_sec2_bg.webp)">
         <div class="m-main">
           <div class="col-flex flex">
-            <div class="col-left"></div>
+            <div class="col-left">
+              <figure class="fig-item">
+                <img src="https://static.econtents.co.kr/_img/iyeo/main_sec2_img.webp" alt="" />
+              </figure>
+            </div>
             <div class="col-right">
               <dl class="dec-wrap">
                 <dt>

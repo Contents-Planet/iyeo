@@ -6,7 +6,7 @@ $page = $_GET['page'] ?? 1;
 <html lang="ko">
 
 <head>
-  <title>채용공고 | 이여 F&B</title>
+  <title>채용공고 | 이여 곰탕</title>
   <meta property="og:title" content="채용공고 | 이여 F&B"/>
   <meta property="og:url" content="https://iyeo.co.kr/page/startup"/>
 
@@ -22,10 +22,10 @@ $page = $_GET['page'] ?? 1;
     <input type="hidden" id="depth2" value="4"/>
   </header>
 
-  <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub5.webp)">
+  <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub5.webp)">
     <div class="m-main">
       <header class="page-header">
-        <h2 class="header-tit">커뮤니티</h2>
+        <h2 class="header-tit _motion _motionToTop _delay1">커뮤니티</h2>
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>

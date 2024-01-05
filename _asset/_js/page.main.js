@@ -8,6 +8,7 @@ var Page = {
 			autoplay: false
 		}
 		ND.SLIDE.Swiper("mainKv", option)
+
 	},
 
 	Bind : function(){

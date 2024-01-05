@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <title>창업 안내 | 이여 F&B</title>
-  <meta property="og:title" content="창업 안내 | 이여 F&B" />
+  <title>창업 안내 | 이여 곰탕</title>
+  <meta property="og:title" content="창업 안내 | 이여 곰탕" />
   <meta property="og:url" content="https://iyeo.co.kr/page/startup" />
 
   <?php include_once $_SERVER["DOCUMENT_ROOT"]."/page/_inc/head.php"; ?>
+
+  <link rel="stylesheet" href="//static.econtents.co.kr/_asset/_lib/WOW-master/css/libs/animate.css" type="text/css">
 </head>
 <body>
 
@@ -16,10 +18,10 @@
     <input type="hidden" id="depth2" value="1"/>
   </header>
 
-  <section class="sec sec-kv" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub4.webp)">
+  <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub4.webp)">
     <div class="m-main">
       <header class="page-header">
-        <h2 class="header-tit">창업 안내</h2>
+        <h2 class="header-tit _motion _motionToTop _delay1">창업 안내</h2>
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>
@@ -38,14 +40,13 @@
   </section>
   <div id="container">
     <div id="contents">
-      <section class="sec sec1">
+      <section class="sec sec1 _motionSec">
         <div class="m-main">
-          <header class="sec-header">
-            <h3 class="header-tit">이여곰탕만의 성공 경쟁력</h3>
-          </header>
           <figure class="fig-item">
-            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec1_img.webp" alt="" />
+            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec1_img_v2.webp" alt="" />
             <figcaption class="a11y">
+              이여곰탕은 다릅니다
+              이여곰탕만의 성공 경쟁력
               2023년 평균 일매출
               용산점 - 700만원 이상
               역삼점 - 340만원 이상
@@ -55,11 +56,28 @@
         </div>
       </section>
 
-      <section class="sec sec2">
+      <section class="sec sec1-2 _motionSec">
+        <div class="m-main">
+          <figure class="fig-item">
+            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec2_img_v2.webp" alt="" />
+            <figcaption class="a11y">
+              한식 프랜차이즈 매출 순위 9위!
+              순위 / 상호 / 브랜드 / 가맹사업 개시일 / 가맹점 수 :
+              1 (주)맛찬들 / 맛찬들 왕소금구이 / 2013. 04. / 80개 이상
+              2 (주)고릴라F&D / 진대감 / 2013. 12. / 20개 이상
+              9 (주)이여 / 이여곰탕 / 2018. 12. / 10개 이상
+              14 (주)델리앤 / 순흥골 / 2009. 07. / 10개 미만
+              15 (주)첨성대 / 옛날농장 / 2001. 01. / 10개 이상
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="sec sec2 _motionSec">
         <div class="m-main">
           <ul class="feat-flex flex">
             <li>
-              <div class="box">
+              <div class="box wow fadeInUp" data-wow-delay="0.2s">
                 <strong class="tit t1">서울 4대 한우곰탕 선정</strong>
                 <p class="dec">
                   각종 매스컴과 인플루언서들이 극찬한 <br />
@@ -68,7 +86,7 @@
               </div>
             </li>
             <li>
-              <div class="box">
+              <div class="box wow fadeInUp" data-wow-delay="0.4s">
                 <strong class="tit t2">합리적인 원가율</strong>
                 <p class="dec">
                   상생(상생)의 모토 아래 가맹점과 본사가 <br />
@@ -77,7 +95,7 @@
               </div>
             </li>
             <li>
-              <div class="box">
+              <div class="box wow fadeInUp" data-wow-delay="0.5s">
                 <strong class="tit t3">차별화된 노하우</strong>
                 <p class="dec">
                   이여곰탕만의 메뉴, 레시피,운영 <br />
@@ -86,8 +104,8 @@
               </div>
             </li>
             <li>
-              <div class="box">
-                <strong class="tit t1">효율적 매장 운영</strong>
+              <div class="box wow fadeInUp" data-wow-delay="0.6s">
+                <strong class="tit t4">효율적 매장 운영</strong>
                 <p class="dec">
                   간편한 조리 시스템으로 인건비 절감 효과! <br />
                   높은 회전율로 매출이 극대화됩니다.
@@ -98,10 +116,10 @@
         </div>
       </section>
 
-      <section class="sec sec3" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/startup_sec3_bg.webp)">
+      <section class="sec sec3 _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/startup_sec3_bg_v2.webp)">
         <div class="m-main">
           <figure class="fig-item">
-            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec3_img.webp" alt="" />
+            <img src="https://static.econtents.co.kr/_img/iyeo/startup_sec3_v2.webp" alt="" />
             <figcaption class="a11y">
               매스컴이 주목하는 이여곰탕
               월간식당
@@ -131,13 +149,13 @@
 
       <section class="sec sec4">
         <div class="m-main">
-          <article class="article a1">
+          <article class="article a1 _motionSec">
             <header class="sec-header">
-              <h3 class="small-tit">창업 절차</h3>
+              <h3 class="small-tit _motion _motionToBottom">창업 절차</h3>
             </header>
             <ul class="step-flex flex">
               <li>
-                <dl class="box">
+                <dl class="box wow fadeInUp" data-wow-delay="0.2s">
                   <dt>
                     <strong class="tit s1">
                       STEP 1<br />
@@ -155,7 +173,7 @@
               </li>
 
               <li>
-                <dl class="box">
+                <dl class="box wow fadeInUp" data-wow-delay="0.4s">
                   <dt>
                     <strong class="tit s2">
                       STEP 2<br />
@@ -172,7 +190,7 @@
               </li>
 
               <li>
-                <dl class="box">
+                <dl class="box wow fadeInUp" data-wow-delay="0.6s">
                   <dt>
                     <strong class="tit s3">
                       STEP 3<br />
@@ -189,7 +207,7 @@
               </li>
 
               <li>
-                <dl class="box">
+                <dl class="box wow fadeInUp" data-wow-delay="0.8s">
                   <dt>
                     <strong class="tit s4">
                       STEP 4<br />
@@ -205,7 +223,7 @@
               </li>
 
               <li>
-                <dl class="box">
+                <dl class="box wow fadeInUp" data-wow-delay="1.0s">
                   <dt>
                     <strong class="tit s5">
                       STEP 5<br />
@@ -222,7 +240,7 @@
               </li>
 
               <li>
-                <dl class="box">
+                <dl class="box wow fadeInUp" data-wow-delay="1.2s">
                   <dt>
                     <strong class="tit s6">
                       STEP 6<br />
@@ -240,7 +258,7 @@
               </li>
 
               <li>
-                <dl class="box">
+                <dl class="box wow fadeInUp" data-wow-delay="1.4s">
                   <dt>
                     <strong class="tit s7">
                       STEP 7<br />
@@ -257,7 +275,7 @@
               </li>
 
               <li>
-                <dl class="box">
+                <dl class="box wow fadeInUp" data-wow-delay="1.6s">
                   <dt>
                     <strong class="tit s8">
                       STEP 8<br />
@@ -276,14 +294,14 @@
             </ul>
           </article>
 
-          <article class="article a2">
-            <header class="sec-header">
+          <article class="article a2 _motionSec">
+            <header class="sec-header small-tit _motion _motionToBottom _delay1-5">
               <h3 class="small-tit">창업 비용</h3>
               <small>· 99㎡(30평) 기준</small>
             </header>
             <div class="tbl-container">
-              <p class="t-right">(단위: 천원/ VAT 별도)</p>
-              <div class="over-wrap">
+              <p class="t-right _motion _motionToBottom _delay2">(단위: 천원/ VAT 별도)</p>
+              <div class="over-wrap _motion _motionToTop _delay2-5">
                 <table class="tbl">
                   <colgroup>
                     <col style="width:120px"/>
@@ -434,5 +452,12 @@
     <?php include_once $_SERVER["DOCUMENT_ROOT"]."/page/_inc/footer.php"; ?>
   </footer>
 </div>
+
+<script src="//static.econtents.co.kr/_asset/_lib/WOW-master/dist/wow.min.js"></script>
+<script>
+  $(function(){
+    new WOW().init();
+  })
+</script>
 </body>
 </html>
