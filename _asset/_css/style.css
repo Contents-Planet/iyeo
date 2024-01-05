@@ -225,14 +225,14 @@ body.noscroll {
 }
 
 #logo {
-  width: 200px;
+  width: 215px;
   left: 0;
   z-index: 1;
 }
 #logo .logo-item {
   display: block;
-  padding-top: 27.94%;
-  background: url(https://static.econtents.co.kr/_img/iyeo/logo.webp) center no-repeat;
+  padding-top: 23.39%;
+  background: url(https://static.econtents.co.kr/_img/iyeo/logo_iyeo.webp) center no-repeat;
   background-size: cover;
 }
 
@@ -319,14 +319,14 @@ body.noscroll {
   margin-bottom: 15px;
 }
 #footer .col-logo {
-  max-width: 180px;
+  max-width: 200px;
   width: 100%;
 }
 #footer .foot-logo {
   display: inline-block;
   width: 100%;
-  padding-top: 16.11%;
-  background: url(https://static.econtents.co.kr/_img/iyeo/logo_foot.webp) center no-repeat;
+  padding-top: 23.5%;
+  background: url(https://static.econtents.co.kr/_img/iyeo/logo_iyeo_foot.webp) center no-repeat;
   background-size: cover;
 }
 #footer .footer-btt {
@@ -639,10 +639,12 @@ section.sec {
 
 .header-tit {
   font-size: 46px;
+  display: inline-block;
   font-family: "Noto Serif KR", serif;
 }
 
 .small-tit {
+  display: inline-block;
   font-size: 32px;
   font-family: "Noto Serif KR", serif;
 }

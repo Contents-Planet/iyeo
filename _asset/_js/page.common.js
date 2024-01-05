@@ -22,6 +22,7 @@ var clickedOverlay = null;
 $(function(){
 	PageCommon.Init();
 	GNB.Init();
+	MotionSec.Init();
 })
 
 var PageCommon = {
@@ -287,3 +288,42 @@ var Map = {
 	}
 }
 
+var MotionSec = {
+	Active : function(){
+		var $top = $(".motion-line.top"),
+			$btt = $(".motion-line.btt");
+
+		if($top.index() > -1 && $btt.index() > -1) {
+			console.log("Ddd")
+			var top = $top.offset().top,
+				btt = $btt.offset().top;
+
+			//console.log(top, btt)
+			$.each($("._motionSec"), function(index, row){
+				var rowTop = $(row).offset().top,
+					rowHeight = $(row).outerHeight(),
+					rowBtt = parseInt(rowTop) + parseInt(rowHeight);
+
+				/*console.log(rowTop, rowBtt, "top : "+ top, "btt : "+ btt)
+				console.log(top +" <= "+ rowTop +" && "+ btt +" >= "+ rowTop)*/
+
+				if(!$(row).hasClass("_motionActive")) {
+					if((top >= rowTop && top <= rowBtt) || (btt >= rowTop && btt <= rowBtt)) {
+						$(row).addClass("_motionActive")
+					}
+				}
+			})
+		}
+	},
+
+	Bind : function(){
+		$(window).scroll(function(){
+			MotionSec.Active();
+		})
+	},
+
+	Init : function(){
+		MotionSec.Bind();
+		MotionSec.Active();
+	}
+}

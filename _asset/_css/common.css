@@ -892,6 +892,7 @@ input[type=text]:read-only {
 #sticky-line,
 .scroll-dot {
   position: fixed;
+  width: 100%;
   left: 0;
   right: 0;
   height: 0;
