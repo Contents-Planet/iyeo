@@ -21,8 +21,8 @@ class MailService
         $mail->Password    = 'planet88@@';
         $mail->SMTPSecure  = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port        = 465;
-        $mail->setFrom('cp@ct-planet.co.kr', 'FROM');
-        $mail->addAddress('jyj@ct-planet.co.kr', 'TO');
+        $mail->setFrom('cp@ct-planet.co.kr', '이여곰탕');
+        $mail->addAddress('kkt@ct-planet.co.kr');
         $mail->isHTML(true);
         $mail->CharSet    = "UTF-8";
         $mail->Encoding   = "base64";
