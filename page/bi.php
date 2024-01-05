@@ -21,7 +21,7 @@
       <header class="page-header">
         <p class="header-dec _motion _motionToBottom">K푸드를 선도하는</p>
         <strong class="header-tit _motion _motionToTop _delay1">이여곰탕</strong>
-        <h2 class="a11y">브랜드소개</h2>
+        <h2  class="a11y">브랜드소개</h2>
         <h3 class="a11y">CI BI 소개</h3>
       </header>
       <ul class="location-bar flex">
