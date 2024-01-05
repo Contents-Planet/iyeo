@@ -182,7 +182,7 @@ switch ($mode) {
 
     break;
 
-    case "getMenus":
+  case "getMenus":
     try {
       $iyeoService = new IyeoService();
 

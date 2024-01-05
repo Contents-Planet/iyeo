@@ -10,6 +10,11 @@ else if($type === "customer") {
   $_active = "5";
   $_active2 = "2";
 }
+else if($type === "news") {
+  $_title = "보도자료";
+  $_active = "5";
+  $_active2 = "3";
+}
 else {
   echo '<script>alert("잘못된 접근입니다."); location.href = "/";</script>';
   exit;
@@ -27,8 +32,6 @@ $page = $_GET['page'] ?? 1;
   <meta property="og:url" content="https://iyeo.co.kr/page/startup"/>
 
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/page/_inc/head.php"; ?>
-
-  
 </head>
 
 <body>
@@ -54,7 +57,7 @@ $page = $_GET['page'] ?? 1;
             <div class="drop-wrap">
               <a href="javascript:void(0)" class="nav-item <?=($type === "notice" ? "_active" : "")?>" data-action="value" data-url="/page/inquiry?type=notice">공지사항</a>
               <a href="javascript:void(0)" class="nav-item <?=($type === "customer" ? "_active" : "")?>" data-action="value" data-url="/page/inquiry?type=customer">1:1문의</a>
-              <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="">보도자료</a>
+              <a href="javascript:void(0)" class="nav-item <?=($type === "news" ? "_active" : "")?>" data-action="value" data-url="">보도자료</a>
               <a href="javascript:void(0)" class="nav-item" data-action="value" data-url="/page/recruiting">채용공고</a>
             </div>
           </div>

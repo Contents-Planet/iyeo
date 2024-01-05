@@ -57,7 +57,7 @@ error_reporting(0);
                 <a href="/page/inquiry?type=customer" class="depth-item" data-action="depth2" data-sid="2">1:1문의</a>
               </li>
               <li>
-                <a href="javascript:alert('준비중입니다.')" class="depth-item" data-action="depth2" data-sid="3">보도자료</a>
+                <a href="/page/inquiry?type=news" class="depth-item" data-action="depth2" data-sid="3">보도자료</a>
               </li>
               <li>
                 <a href="/page/recruiting" class="depth-item" data-action="depth2" data-sid="4">채용공고</a>

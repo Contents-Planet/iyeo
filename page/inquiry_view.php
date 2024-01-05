@@ -10,10 +10,16 @@ $psw = $_POST['psw'];
 if($type === "notice") {
   $_title = "공지사항";
   $_depth2 = "1";
-} else if($type === "customer") {
+}
+else if($type === "customer") {
   $_title = "1:1 문의";
   $_depth2 = "2";
-} else {
+}
+else if($type === "news") {
+  $_title = "보도자료";
+  $_depth2 = "3";
+}
+else {
   echo '<script>alert("잘못된 접근입니다."); location.href = "/";</script>';
   exit;
 }
@@ -39,10 +45,10 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
 
 <head>
   <title><?= $data['title'] ?> | 이여 곰탕</title>
-  <meta property="og:title" content="<?= $_title ?> | 이여 F&B"/>
+  <meta property="og:title" content="<?= $data['title'] ?> | 이여 F&B"/>
   <meta property="og:url" content="https://iyeo.co.kr/page/inquiry_view?type=notice&seq=<?=$seq?>"/>
-  <meta name="description" content="<?= strip_tags($data['content']) ?>" />
-  <meta property="og:description" content="<?= strip_tags($data['content']) ?>" />
+  <meta name="description" content="<?= str_replace("&nbsp;", "", strip_tags($data['content']) ) ?>" />
+  <meta property="og:description" content="<?= str_replace("&nbsp;", "", strip_tags($data['content']) ) ?>" />
 
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/page/_inc/head.php"; ?>
 </head>
@@ -88,7 +94,7 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
               </ul>
             </header>
             <div class="editor-container wow fadeInUp" data-wow-delay="0.8s">
-              <?= $data['content'] ?>
+              <?= str_replace("&nbsp;", "", $data['content']) ?>
             </div>
             <div class="next-container wow fadeInUp" data-wow-delay="1.0s">
               <ul class="flex">

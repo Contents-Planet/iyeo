@@ -25,6 +25,7 @@ class IyeoService extends MysqlService
         $column = ["*"];
         $where = [
             "inquiry_type = '" . $type . "'",
+            "is_Active = 'Y'",
         ];
 
         return $this->getMultiSelect($this->table, $where, $column, $orderBy, $page, 10);

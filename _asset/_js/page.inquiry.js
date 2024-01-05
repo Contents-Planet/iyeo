@@ -75,7 +75,8 @@ var Page = {
 						no -= 1;
 					})
 					PageCommon.AjaxPaging($("[data-selector=pageing]"), totCnt, parseInt(__nowPage), pageCnt, 5, '/page/inquiry', 'type='+ type);
-				} else {
+				}
+				else {
 					html += '	<li><p class="no-data">등록된 게시글이 없습니다.</p></li>';
 				}
 
