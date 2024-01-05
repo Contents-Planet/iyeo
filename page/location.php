@@ -21,7 +21,7 @@
       <header class="page-header">
         <p class="header-dec _motion _motionToBottom">K푸드를 선도하는</p>
         <strong class="header-tit _motion _motionToTop _delay1">이여곰탕</strong>
-        <h2  class="a11y">브랜드소개</h2>
+        <h2 class="a11y">브랜드소개</h2>
         <h3 class="a11y">본사오시는길</h3>
       </header>
       <ul class="location-bar flex">
@@ -45,7 +45,7 @@
       <section class="sec _motionSec">
         <div class="m-main">
           <header class="sec-header">
-            <h2  class="header-tit _motion _motionToBottom _delay1-5">
+            <h2 class="header-tit _motion _motionToBottom _delay1-5">
               건강한 맛, 정직한 고집 <br />
               이여F&B입니다.
             </h2>
