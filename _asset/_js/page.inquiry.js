@@ -37,11 +37,10 @@ var Page = {
 					no = totCnt - pageCnt * (__nowPage - 1),
 					html = "";
 
-				console.log(datas)
 				if(datas) {
 					$.each(datas, function(index, row) {
 
-						html += '	<li>';
+						html += '	<li class="wow fadeInUp" data-wow-delay="'+ ((index + 2) * 2 / 10) +'s">';
 						html += '		<a href="'+ (type === "customer" ? 'javascript:void(0)' : '/page/inquiry_view?type='+ type +'&seq='+ row.seqs) +'" class="link-item '+ (type === "notice" ? "notice-item" : '') +'" '+ (type === "customer" ? 'data-action="qnaView"' : '') +' data-seq="' + row.seqs + '">';
 						html += '			<strong class="no">'+ no +'</strong>';
 						html += '			<div class="dec-wrap">';
@@ -225,5 +224,6 @@ var Page = {
 
 	Init: function () {
 		Page.Bind();
+		new WOW().init();
 	}
 }

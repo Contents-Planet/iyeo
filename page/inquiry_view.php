@@ -38,9 +38,11 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
 <html lang="ko">
 
 <head>
-  <title><?= $_title ?> | 이여 곰탕</title>
+  <title><?= $data['title'] ?> | 이여 곰탕</title>
   <meta property="og:title" content="<?= $_title ?> | 이여 F&B"/>
-  <meta property="og:url" content="https://iyeo.co.kr/page/startup"/>
+  <meta property="og:url" content="https://iyeo.co.kr/page/inquiry_view?type=notice&seq=<?=$seq?>"/>
+  <meta name="description" content="<?= strip_tags($data['content']) ?>" />
+  <meta property="og:description" content="<?= strip_tags($data['content']) ?>" />
 
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/page/_inc/head.php"; ?>
 </head>
@@ -54,7 +56,7 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
   <section class="sec sec-kv _motionSec" style="background-image:url(https://static.econtents.co.kr/_img/iyeo/bg_sub5.webp)">
     <div class="m-main">
       <header class="page-header">
-        <h2 class="header-tit _motion _motionToTop _delay1">커뮤니티</h2>
+        <h2 class="header-tit _motion _motionToBottom _delay1">커뮤니티</h2>
       </header>
       <ul class="location-bar flex">
         <li><a href="/" class="nav-item hone"><span class="a11y">Home</span></a></li>
@@ -74,21 +76,21 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
   </section>
   <div id="container">
     <div id="contents">
-      <section class="sec">
+      <section class="sec _motionSec">
         <div class="m-main">
           <div class="bbs-detail">
             <header class="sec-header">
-              <h2 class="small-tit"><?= $data['title'] ?></h2>
-              <ul class="info-flex flex">
+              <h2 class="small-tit wow fadeInUp" data-wow-delay="0.4s"><?= $data['title'] ?></h2>
+              <ul class="info-flex flex wow fadeInUp" data-wow-delay="0.6s">
                 <li><?= $data['name'] ?></li>
                 <li><?= $data['created_at'] ?></li>
                 <li><span class="view"><?= $data['hit'] ?>명이 이 글을 읽었습니다.</span></li>
               </ul>
             </header>
-            <div class="editor-container">
+            <div class="editor-container wow fadeInUp" data-wow-delay="0.8s">
               <?= $data['content'] ?>
             </div>
-            <div class="next-container">
+            <div class="next-container wow fadeInUp" data-wow-delay="1.0s">
               <ul class="flex">
                 <li>
                   <a href="<?=$prePagePath?>" class="page-item prev"><?= $prePageText ?></a>
@@ -99,7 +101,7 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
                 </li>
               </ul>
             </div>
-            <div class="btn-right">
+            <div class="btn-right wow fadeInUp" data-wow-delay="1.2s">
               <a href="/page/inquiry?type=<?=$type?>" class="btn c-brown">목록</a>
             </div>
           </div>
@@ -111,5 +113,10 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
     <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/page/_inc/footer.php"; ?>
   </footer>
 </div>
+<script>
+  $(function(){
+    new WOW().init();
+  })
+</script>
 </body>
 </html>
