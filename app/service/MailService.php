@@ -27,7 +27,7 @@ class MailService
         $mail->CharSet    = "UTF-8";
         $mail->Encoding   = "base64";
         $mail->Subject     = '문의글이 등록되었습니다.';
-        $mail->Body        = '문의글 바로보기';
+        $mail->Body        = '관리자에서 문의를 확인해주세요.';
         $mail->send();
     }
 }
