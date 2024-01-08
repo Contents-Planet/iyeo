@@ -111,4 +111,24 @@ class IyeoService extends MysqlService
 
         return $this->getMultiSelect("product", $where, $column, $orderBy, 1, 1000);
     }
+
+    public function getPopups()
+    {
+        $orderBy = [
+            "column" => "seq",
+            "sort" => "desc"
+        ];
+
+        $column = ["*"];
+  
+        $where = [ 
+            "is_active = 'Y'",
+            "start_date <= '".date("Y-m-d")."'",
+            "end_date >= '".date("Y-m-d")."'",
+        ];
+
+        return $this->getMultiSelect("popup", $where, $column, $orderBy, 1, 500);
+    }
+
+    
 }

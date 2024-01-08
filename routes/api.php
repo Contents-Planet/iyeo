@@ -211,6 +211,37 @@ switch ($mode) {
     }
 
     break;
+
+  case "getPopups":
+    
+    try {
+      $iyeoService = new IyeoService();
+
+      $datas = $iyeoService->getPopups();
+      $cnt = 0;
+
+      foreach ($datas as $data) {
+        $results["data"][$cnt]["seq"]	= $data['seq'];
+        $results["data"][$cnt]["img"]	  = $data['img'];
+        $results["data"][$cnt]["alt"]	  = $data['img_alt'];
+        $results["data"][$cnt]["link"]	= $data['img_link'];
+        $results["data"][$cnt]["s_date"]	= $data['start_date'];
+        $results["data"][$cnt]["e_date"]	= $data['end_date'];
+        $cnt++;
+      }
+      $results["totalCount"] = $cnt;
+      $results["result"] = 200;
+
+      echo json_encode($results);
+    } catch (Exception $e) {
+
+      echo json_encode([
+        "result" => 400,
+        "message" => $e->getMessage()
+      ]);
+    }
+
+    break;
 };
 
 exit;
