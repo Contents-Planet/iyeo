@@ -19,9 +19,7 @@
     <div class="swiper slide-container" data-selector="mainKv">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="video-container" data-selector="kvVideo">
-            <iframe class="iframe" id="iframe-wrap" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="YouTube video player" width="100%" height="auto" src="https://www.youtube.com/embed/l8Nv29RJtKs?autoplay=1&origin=https://iyeo.co.kr&widgetid=1&mute=1&loop=1"></iframe>
-          </div>
+          <div class="video-container img-box" data-selector="kvVideo" style="background-image:url(../_img/main_1.jpg)"></div>
         </div>
 
         <!--<div class="swiper-slide">
@@ -100,6 +98,6 @@
     <?php include_once $_SERVER["DOCUMENT_ROOT"]."/page/_inc/footer.php"; ?>
   </footer>
 </div>
-<script src="/_asset/_js/page.main.js"></script>
+<script src="/_asset/_js/page.main2.js"></script>
 </body>
 </html>

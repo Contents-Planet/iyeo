@@ -1,6 +1,13 @@
 $(function(){
 	Page.Init();
 	MainPop.Init();
+
+	setTimeout(() => {
+		var container = "kvVideo",
+			sid = "1",
+			youtube = "l8Nv29RJtKs";
+		PageCommon.youtubePlay(container, sid, youtube);
+	}, 2000);
 })
 
 var Page = {

@@ -144,6 +144,20 @@ var PageCommon = {
 		if (typeof _finishCallback === "function") _finishCallback.call();
 	},
 
+	Api : function(formData,  _callback){
+		$.ajax({
+			type: 'post',
+			url: "/routes/api.php",
+			dataType:"json",
+			data: formData,
+			success: function(response) {
+				if (typeof _callback === 'function') {
+					_callback.call(null, response);
+				}
+			}
+		});
+	},
+
 	Bind : function(){
 		$("[data-action=video]").unbind("click");
 		$(document).on("click", "[data-action=video]", function(){
@@ -324,5 +338,138 @@ var MotionSec = {
 	Init : function(){
 		MotionSec.Bind();
 		MotionSec.Active();
+	}
+}
+
+/**************************
+ * 메인팝업
+ ***************************/
+var MainPop = {
+	Render : function(){
+		$(".main-pop").remove();
+		var formData = {
+			'mode' : "getPopup"
+		}
+		PageCommon.Api(formData, function(res){
+			console.log(formData, res)
+			if(res.result === 200 && res.data) {
+				var $data = res.data,
+					$popHTML = "";
+
+				$.each($data, function (index, row) {
+					$popHTML += '<div id="pop' + row.seq + '" class="main-pop">';
+					$popHTML += ' 	<div class="mainpopArea">';
+					$popHTML += ' 		<div class="popCon_wrap">';
+					if (row.link) {
+						$popHTML += ' 			<a href="' + row.link + '" '+ (row.target === "Y" ? 'target="_blank"' : '') +' >';
+					}
+					$popHTML += ' 			<figure>';
+					$popHTML += ' 				<img src="'+ row.img +'" alt="" data-selector="popImg"/>';
+					$popHTML += ' 				<figcation class="a11y">' + row.alt + '</figcation>';
+					$popHTML += ' 			</figure>';
+					if (row.link) {
+						$popHTML += ' 			</a>';
+					}
+					$popHTML += ' 		</div>';
+					$popHTML += ' 		<form name="notice_form">';
+					$popHTML += ' 			<ul class="popupClose flex">';
+					$popHTML += ' 				<li><label><input data-action="popToday" type="checkbox" name="chkbox'+ row.seq +'" value="Y" title="오늘 하루 그만보기"/>오늘 하루 그만보기</label></li>';
+					$popHTML += ' 				<li><a href="javascript:void(0)" class="closePop" data-action="popClose">닫기</a></li>';
+					$popHTML += ' 			</ul>';
+					$popHTML += ' 		</form>';
+					$popHTML += ' 	</div>';
+					$popHTML += '</div>';
+
+					var MainpopName = row.seq + "=done",
+						cookiedata = document.cookie;
+
+					if (cookiedata.indexOf(MainpopName) < 0) {
+						$("body").append($popHTML);
+					}
+
+					MainPop.RePosition();
+				})
+			}
+		})
+	},
+
+	RePosition : function(){
+		var $pop =  $(".main-pop");
+
+		$('body').imagesLoaded( function() {
+			$.each($pop, function(index, row){
+				if(!$("body").hasClass("_frameSmall")) {
+					$(row).css({
+						"left": (index * $(row).outerWidth() + ((index + 1) * 15)) + "px",
+						"top" : "50px"
+					});
+				} else {
+					$(row).css({
+						"left": 10 + "px",
+						"right": 10 + "px",
+						"width" : "auto",
+						//"top" : (index * $(row).outerHeight() + ((index + 1) * 15)) + "px"
+						"top" : "50px"
+					});
+				}
+			})
+		});
+	},
+
+	Resize : function(){
+		var $pop =  $(".main-pop"),
+			$popImg =  $("[data-selector=popImg]"),
+			winWidth = $(window).outerWidth();
+
+		if($pop.length > 0) {
+			var reWidth = (winWidth - 15) / $pop.length - 15;
+
+			if(reWidth < ($popImg[0].naturalWidth > 500 ? 500 : $popImg[0].naturalWidth)) {
+				$pop.css({"width" : reWidth +'px'});
+			}
+
+			setTimeout(function() {
+				MainPop.RePosition();
+			}, 100);
+		}
+	},
+
+	POpClose : function(e){
+		var pop = e.closest(".main-pop").attr("id"),
+			$pop = $("#" + pop),
+			formChk = $pop.find("[data-action=popToday]").is(":checked");
+
+		if (formChk) {
+			ND.COOKIE.set(pop, "done", 1); //쿠키설정 숫자1 = 1일
+			$pop.remove();
+		} else {
+			$pop.remove();
+		}
+		setTimeout(function() {
+			MainPop.Resize();
+		}, 100);
+	},
+
+	Bind : function() {
+		$("[data-action=popClose]").unbind("click");
+		$(document).on("click", "[data-action=popClose]", function(){
+			MainPop.POpClose($(this));
+		})
+
+		$("[data-action=popToday]").unbind("change");
+		$(document).on("click", "[data-action=popToday]", function(){
+			MainPop.POpClose($(this));
+		})
+
+		$(window).resize(function(){
+			if($(".main-pop").length > 0) {
+				MainPop.Resize();
+			}
+		})
+	},
+
+	Init : function() {
+		MainPop.Bind();
+		MainPop.Render();
 	}
 }
