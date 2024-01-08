@@ -42,7 +42,6 @@ var PageCommon = {
 			playerVars: {'controls': 0 },
 			events: {
 				'onReady': function(event) {
-					console.log(event)
 					event.target.playVideo();
 					event.target.mute();
 					event.target.setVolume(0);
@@ -163,7 +162,6 @@ var PageCommon = {
 	Bind : function(){
 		$("[data-action=video]").unbind("click");
 		$(document).on("click", "[data-action=video]", function(){
-			console.log("Ddd");
 			PageCommon.Video($(this));
 		})
 	},
@@ -185,7 +183,6 @@ var GNB = {
 	},
 
 	OpenMenu : function(){
-		console.log("ddd");
 		if ($("#header").hasClass("_open")) {
 			GNB.Reset();
 		} else {
@@ -210,6 +207,16 @@ var GNB = {
 
 	OpenDepth : function(){
 		$("#header").addClass("_openDepth");
+	},
+
+	RowDepth : function(e){
+		if ($("body").hasClass("_frameMobile")) {
+			$("[data-selector=depthContainer]").removeClass("_open")
+			if(e.data("depth") === "has") {
+				var $wrap = e.closest("[data-selector=depthContainer]");
+				$wrap.addClass("_open");
+			}
+		}
 	},
 
 	Sticky: function () {
@@ -249,7 +256,7 @@ var GNB = {
 
 		$("#header [data-selector=dropConteinr]").unbind("mouseleave").on("mouseleave", function(){
 			if ($("body").hasClass("_frame-pc")) {
-				Nav.Reset();
+				GNB.Reset();
 			}
 		})
 
@@ -259,6 +266,10 @@ var GNB = {
 
 		$("#header").unbind("mouseleave").on("mouseleave", function(){
 			GNB.Reset();
+		})
+
+		$("[data-selector=depth1]").unbind("click").on("click", function(){
+			GNB.RowDepth($(this));
 		})
 
 		$(window).scroll(function(){

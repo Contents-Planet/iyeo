@@ -274,6 +274,13 @@ body.noscroll {
     text-align: center;
     padding: 10px 0;
   }
+  #header .col-nav > ul > li._open .row-depth {
+    position: relative;
+    top: auto;
+  }
+  #header .col-nav > ul > li .depth-item {
+    font-size: 16px;
+  }
   #header .col-nav .mall {
     display: inline-block !important;
     padding: 5px 20px;

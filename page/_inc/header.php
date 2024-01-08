@@ -15,8 +15,8 @@ error_reporting(0);
     <h1 id="logo"><a href="/" class="logo-item"><span class="a11y">이여F&B</span></a></h1>
     <nav class="col-nav">
       <ul>
-        <li>
-          <a href="javascript:void(0)" class="nav-item" data-selector="depth1" data-sid="1">브랜드 소개</a>
+        <li data-selector="depthContainer">
+          <a href="javascript:void(0)" class="nav-item" data-selector="depth1" data-depth="has" data-sid="1">브랜드 소개</a>
           <div class="row-depth">
             <ul class="nav">
               <li>
@@ -33,8 +33,8 @@ error_reporting(0);
         </li>
         <li><a href="/page/menu" class="nav-item" data-selector="depth1" data-sid="2">메뉴 소개</a></li>
         <li><a href="/page/store" class="nav-item" data-selector="depth1" data-sid="3">매장 찾기</a></li>
-        <li>
-          <a href="javascript:void(0)" class="nav-item" data-selector="depth1" data-sid="4">창업 안내</a>
+        <li data-selector="depthContainer">
+          <a href="javascript:void(0)" class="nav-item" data-selector="depth1" data-depth="has" data-sid="4">창업 안내</a>
           <div class="row-depth">
             <ul class="nav">
               <li>
@@ -46,8 +46,8 @@ error_reporting(0);
             </ul>
           </div>
         </li>
-        <li>
-          <a href="javascript:void(0)" class="nav-item" data-selector="depth1" data-sid="5">커뮤니티</a>
+        <li data-selector="depthContainer">
+          <a href="javascript:void(0)" class="nav-item" data-selector="depth1" data-depth="has" data-sid="5">커뮤니티</a>
           <div class="row-depth">
             <ul class="nav">
               <li>
