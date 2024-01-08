@@ -239,6 +239,12 @@ body {
       height:180px;
     }
 
+    &._sticky {
+      &::before {
+        background:#fff;
+      }
+    }
+
     .row-depth {
       opacity: 1;
       height:auto;
@@ -855,7 +861,11 @@ section {
   }
 
   #header {
-    background:rgba(255, 255, 255, 0.6)
+    background:rgba(255, 255, 255, 0.6);
+
+    &::before {
+      background:rgba(255, 255, 255, 0.6);
+    }
   }
 
   .dec-wrap {

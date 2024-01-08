@@ -210,6 +210,9 @@ body.noscroll {
 #header._openDepth::before {
   height: 180px;
 }
+#header._openDepth._sticky::before {
+  background: #fff;
+}
 #header._openDepth .row-depth {
   opacity: 1;
   height: auto;
@@ -720,6 +723,9 @@ section.sec {
   padding-top: 0;
 }
 .page-main #header {
+  background: rgba(255, 255, 255, 0.6);
+}
+.page-main #header::before {
   background: rgba(255, 255, 255, 0.6);
 }
 .page-main .dec-wrap {
