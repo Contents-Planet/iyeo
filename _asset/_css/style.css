@@ -928,7 +928,7 @@ section.sec {
     height: auto;
   }
   .page-main .sec1::after {
-    display: none;
+    display: none !important;
   }
   .page-main .sec1 .col-flex .col-left {
     text-align: center;

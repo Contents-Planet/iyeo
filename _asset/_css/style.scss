@@ -1121,7 +1121,7 @@ section {
 
     .sec1 {
       &::after {
-        display: none;
+        display: none !important;
       }
 
       .col-flex {
