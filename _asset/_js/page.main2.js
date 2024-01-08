@@ -24,7 +24,7 @@ var Page = {
 
 	Init : function(){
 		Page.Bind();
-		Page.Slide();
+		//Page.Slide();
 	}
 }
 
