@@ -19,7 +19,9 @@
     <div class="swiper slide-container" data-selector="mainKv">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="video-container img-box" data-selector="kvVideo" style="background-image:url(../_img/main_1.jpg)"></div>
+          <div class="video-container img-box" data-selector="kvVideo" style="background-image:url(../_img/main_1.jpg)">
+            <a href="javascript:void(0)" data-action="kv" style="position:absolute; left:50%;top:50%; z-index:100;">재생</a>
+          </div>
         </div>
 
         <!--<div class="swiper-slide">

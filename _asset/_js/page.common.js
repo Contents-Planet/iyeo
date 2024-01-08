@@ -349,10 +349,9 @@ var MainPop = {
 	Render : function(){
 		$(".main-pop").remove();
 		var formData = {
-			'mode' : "getPopup"
+			'mode' : "getPopups"
 		}
 		PageCommon.Api(formData, function(res){
-			console.log(formData, res)
 			if(res.result === 200 && res.data) {
 				var $data = res.data,
 					$popHTML = "";
