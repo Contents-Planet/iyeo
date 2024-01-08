@@ -38,7 +38,8 @@ var PageCommon = {
 			height: '100%',
 			width: '100%',
 			videoId: youtube,
-			rel : 0, //0으로 해놓아야 재생 후 관련 영상이 안뜸
+			rel : 0, //0으로 해놓아야 재생 후 관련 영상이 안뜸,
+			playerVars: {'controls': 0 },
 			events: {
 				'onReady': function(event) {
 					console.log(event)

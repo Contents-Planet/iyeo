@@ -19,6 +19,12 @@
     <div class="swiper slide-container" data-selector="mainKv">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
+          <div class="video-container img-box" data-selector="kvVideo" style="background-image:url(../_img/main_1.jpg)">
+            <div class="youtube-container" data-selector="kvVideo"></div>
+          </div>
+        </div>
+
+        <!--<div class="swiper-slide">
           <div class="img-box" style="background-image:url(../_img/main_1.jpg)">
             <div class="m-main">
               <dl class="dec-wrap">
@@ -30,7 +36,7 @@
               </dl>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </section>

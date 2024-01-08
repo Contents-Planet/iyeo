@@ -719,6 +719,9 @@ section.sec {
 .page-main#wrap {
   padding-top: 0;
 }
+.page-main #header {
+  background: rgba(255, 255, 255, 0.6);
+}
 .page-main .dec-wrap {
   color: #fff;
   font-size: 22px;
@@ -778,7 +781,6 @@ section.sec {
   z-index: 50;
 }
 .page-main .sec-kv .img-box {
-  height: 950px;
   background-size: cover;
   text-align: center;
   position: relative;
@@ -806,16 +808,17 @@ section.sec {
   font-size: 90px;
   line-height: 1.1;
 }
-.page-main .sec-kv .video-container {
-  height: 100vh;
+.page-main .sec-kv .video-container .youtube-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
 }
 .page-main .sec-kv .video-container .iframe {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  min-height: 100%;
-  min-width: 100%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 .page-main .sec1 {
   background: #e6e6de;
@@ -862,15 +865,28 @@ section.sec {
 }
 
 @media screen and (max-width: 1230px) {
-  .page-main .sec:not(.sec-kv),
+  .page-main#wrap {
+    padding-top: 100px;
+  }
+  .page-main .sec:not(.sec-kv)::after,
+  .page-main .sec-kv::after {
+    contents: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .page-main .sec:not(.sec-kv) .img-box,
   .page-main .sec-kv .img-box {
-    padding-top: 77.23%;
-    height: auto;
+    /*padding-top: 77.23%;
+    height: auto;*/
   }
   .page-main .sec .kv-tit {
     font-size: 7.32vw;
   }
-  .page-main .sec .sec .sec-tit {
+  .page-main .sec .sec-tit {
     font-size: 3.74vw;
   }
   .page-main .sec2 .col-right {
@@ -878,6 +894,9 @@ section.sec {
   }
 }
 @media screen and (max-width: 768px) {
+  .page-main#wrap {
+    padding-top: 75px;
+  }
   .page-main .sec:not(.sec-kv) {
     height: auto;
     padding: 0;

@@ -17,7 +17,11 @@ var Page = {
 
 	Init : function(){
 		Page.Bind();
-		Page.Slide();
+		//Page.Slide();
+
+		setTimeout(() => {
+			PageCommon.youtubePlay("kvVideo", "1", "l8Nv29RJtKs");
+		}, 500);
 	}
 }
 
