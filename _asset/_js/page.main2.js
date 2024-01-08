@@ -7,7 +7,7 @@ $(function(){
 			sid = "1",
 			youtube = "l8Nv29RJtKs";
 		PageCommon.youtubePlay(container, sid, youtube);
-	}, 10000);
+	}, 5000);
 })
 
 var Page = {

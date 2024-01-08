@@ -41,6 +41,7 @@ var PageCommon = {
 			rel : 0, //0으로 해놓아야 재생 후 관련 영상이 안뜸
 			events: {
 				'onReady': function(event) {
+					console.log(event)
 					event.target.playVideo();
 					event.target.mute();
 					event.target.setVolume(0);
