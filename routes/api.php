@@ -53,25 +53,44 @@ switch ($mode) {
 
   case "getList":
     try {
+
       $iyeoService = new IyeoService();
       $page = $_POST['page'] ?? 1;
       $type = $_POST['type'] ?? "customer";
-      $datas = $iyeoService->inquiryList($type, $page);
-      $inquiryCount = $iyeoService->inquiryCount($type);
-
       $cnt = 0;
+      if($type != 'news'){
+        $datas = $iyeoService->inquiryList($type, $page);
+        $inquiryCount = $iyeoService->inquiryCount($type);
 
-      foreach ($datas as $data) {
-        $results["datas"][$cnt]["seqs"] = $data['seq'];
-        $results["datas"][$cnt]["inquiry_type"] = $data['inquiry_type'];
-        $results["datas"][$cnt]["name"]  = ($type === "notice" ? $data['name'] : preg_replace('/.(?=.$)/u', '*', $data['name']));
-        $results["datas"][$cnt]["title"] = $data['title'];
-        $results["datas"][$cnt]["content"] = $data['content'];
-        $results["datas"][$cnt]["reg_date"] = date("Y-m-d", strtotime($data['created_at']));
-        $results["datas"][$cnt]["reple_yn"] = $data['is_check'];
-        $cnt++;
+       
+
+        foreach ($datas as $data) {
+          $results["datas"][$cnt]["seqs"] = $data['seq'];
+          $results["datas"][$cnt]["inquiry_type"] = $data['inquiry_type'];
+          $results["datas"][$cnt]["name"]  = ($type === "notice" ? $data['name'] : preg_replace('/.(?=.$)/u', '*', $data['name']));
+          $results["datas"][$cnt]["title"] = $data['title'];
+          $results["datas"][$cnt]["content"] = $data['content'];
+          $results["datas"][$cnt]["reg_date"] = date("Y-m-d", strtotime($data['created_at']));
+          $results["datas"][$cnt]["reple_yn"] = $data['is_check'];
+          $cnt++;
+        }
+
+      }else{
+        $datas = $iyeoService->newsList($type, $page);
+        $inquiryCount = $iyeoService->newsCount($type);
+        foreach ($datas as $data) {
+          $results["datas"][$cnt]["seqs"] = $data['seq'];
+          $results["datas"][$cnt]["inquiry_type"] = "news";
+          $results["datas"][$cnt]["name"]  = "관리자";
+          $results["datas"][$cnt]["title"] = $data['title'];
+          $results["datas"][$cnt]["content"] = $data['content'];
+          $results["datas"][$cnt]["reg_date"] = date("Y-m-d", strtotime($data['created_at']));
+          $results["datas"][$cnt]["reple_yn"] = "";
+          $cnt++;
+        }
       }
 
+     
       $results["result"] = 200;
       $results["total_count"] = $inquiryCount;
       echo json_encode($results);

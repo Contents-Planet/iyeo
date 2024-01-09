@@ -25,10 +25,15 @@ else {
 }
 
 $service = new IyeoService();
-$data = $service->inquiryDetail($seq,$type);
-$seqs = $service->getNextPreSeqs($seq,$type);
-$service->hitAddCount($seq,$data['hit']);
-
+if($type != "news"){
+  $data = $service->inquiryDetail($seq,$type);
+  $seqs = $service->getNextPreSeqs($seq,$type);
+  $service->hitAddCount($seq,$data['hit']);
+}else{
+  $data = $service->newsDetail($seq,$type);
+  $seqs = $service->getNewsNextPreSeqs($seq,$type);
+  $service->newsHitAddCount($seq,$data['hit']);
+}
 $preSeq = $seqs['preSeq'];
 $nextSeq = $seqs['nextSeq'];
 
@@ -87,7 +92,7 @@ $prePagePath = ($seqs['preSeq']) ? $defaultPagePath.$seqs['preSeq'] : "javascrip
             <header class="sec-header">
               <h2 class="small-tit wow fadeInUp" data-wow-delay="0.4s"><?= $data['title'] ?></h2>
               <ul class="info-flex flex wow fadeInUp" data-wow-delay="0.6s">
-                <li><?= $data['name'] ?></li>
+                <li><?= $data['name'] ?? "관리자" ?></li>
                 <li><?= $data['created_at'] ?></li>
                 <li><span class="view"><?= $data['hit'] ?>명이 이 글을 읽었습니다.</span></li>
               </ul>
